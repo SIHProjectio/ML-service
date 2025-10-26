@@ -2,11 +2,16 @@
 Enhanced Metro Synthetic Data Generator
 Generates realistic metro train scheduling data with time-based constraints
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import random
 import uuid
 from datetime import datetime, timedelta, time
 from typing import List, Dict, Tuple
-from .metro_models import (
+
+from DataService.metro_models import (
     TrainHealthStatus, Station, Route, FitnessCertificates,
     FitnessCertificate, CertificateStatus, JobCards, Branding
 )

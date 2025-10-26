@@ -2,6 +2,10 @@
 FastAPI Service for Metro Train Schedule Generation
 Provides endpoints for synthetic data generation and schedule optimization
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,11 +13,11 @@ from pydantic import ValidationError
 from datetime import datetime
 import logging
 
-from .metro_models import (
+from DataService.metro_models import (
     DaySchedule, ScheduleRequest, Route, TrainHealthStatus
 )
-from .metro_data_generator import MetroDataGenerator
-from .schedule_optimizer import MetroScheduleOptimizer
+from DataService.metro_data_generator import MetroDataGenerator
+from DataService.schedule_optimizer import MetroScheduleOptimizer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

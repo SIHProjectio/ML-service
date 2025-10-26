@@ -3,16 +3,21 @@ Metro Train Schedule Optimizer
 Generates optimal daily schedules from 5:00 AM to 11:00 PM
 Considers train health, maintenance, branding, and mileage balancing
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import random
 from datetime import datetime, time, timedelta
 from typing import List, Dict, Tuple, Optional
-from .metro_models import (
+
+from DataService.metro_models import (
     DaySchedule, Trainset, TrainStatus, ServiceBlock, FleetSummary,
     OptimizationMetrics, Alert, Severity, DecisionRationale,
     TrainHealthStatus, Route, OperationalHours, FitnessCertificates,
     JobCards, Branding, CertificateStatus, MaintenanceType
 )
-from .metro_data_generator import MetroDataGenerator
+from DataService.metro_data_generator import MetroDataGenerator
 
 
 class MetroScheduleOptimizer:
