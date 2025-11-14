@@ -764,20 +764,6 @@ dow_cos = cos(2 * π * day_of_week / 7)
 
 ---
 
-## Contact & Updates
-
-For questions or suggestions regarding this feature specification:
-
-- **Version:** 1.0
-- **Last Updated:** November 11, 2025
-- **Status:** Living Document (to be updated as system evolves)
-
-**Next Review:** After Phase 1 data collection (2 months)
-
----
-
-## Quick Reference: Minimum Data for Each System
-
 ### GreedyOptim Minimum
 
 ```json
