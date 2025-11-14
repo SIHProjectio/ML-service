@@ -205,11 +205,11 @@ def test_custom_data():
     print("Testing with Custom Minimal Data")
     print("="*70)
     
-    # Create minimal valid data
+    # Create minimal valid data with at least 15 available trainsets
     custom_data = {
         "trainset_status": [
-            {"trainset_id": f"KMRL-{i:02d}", "operational_status": "Available"}
-            for i in range(1, 11)
+            {"trainset_id": f"KMRL-{i:02d}", "operational_status": "Available", "total_mileage_km": 50000.0}
+            for i in range(1, 21)
         ],
         "fitness_certificates": [
             {
@@ -218,7 +218,7 @@ def test_custom_data():
                 "status": "Valid",
                 "expiry_date": (datetime.now() + timedelta(days=365)).isoformat()
             }
-            for i in range(1, 11)
+            for i in range(1, 21)
         ],
         "job_cards": [],  # No job cards
         "component_health": [
@@ -228,12 +228,12 @@ def test_custom_data():
                 "status": "Good",
                 "wear_level": 20.0
             }
-            for i in range(1, 11)
+            for i in range(1, 21)
         ],
         "method": "ga",
         "config": {
-            "required_service_trains": 8,
-            "min_standby": 1,
+            "required_service_trains": 15,
+            "min_standby": 2,
             "population_size": 20,
             "generations": 30
         }

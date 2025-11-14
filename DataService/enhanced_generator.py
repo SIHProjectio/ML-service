@@ -256,7 +256,7 @@ class EnhancedMetroDataGenerator:
                     estimated_hours = random.randint(2, 24)
                 
                 job = {
-                    "job_card_id": f"JC-{random.randint(10000, 99999)}",
+                    "job_id": f"JC-{random.randint(10000, 99999)}",
                     "trainset_id": ts_id,
                     "work_order_number": f"WO-{random.randint(100000, 999999)}",
                     "job_type": random.choice(job_types),

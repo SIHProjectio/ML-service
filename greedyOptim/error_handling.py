@@ -125,7 +125,7 @@ class DataValidator:
                 
                 # Validate dates
                 for date_field in ['issue_date', 'expiry_date']:
-                    if date_field in record:
+                    if date_field in record and record[date_field] is not None:
                         try:
                             datetime.fromisoformat(record[date_field])
                         except ValueError:

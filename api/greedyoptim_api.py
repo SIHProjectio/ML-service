@@ -451,6 +451,13 @@ async def compare_methods(request: CompareMethodsRequest):
         best_method = None
         
         for method, result in results.items():
+            if result is None:
+                comparison["methods"][method] = {
+                    "success": False,
+                    "error": "Optimization failed for this method"
+                }
+                continue
+                
             comparison["methods"][method] = convert_result_to_response(
                 result, method
             ).dict()
@@ -460,7 +467,7 @@ async def compare_methods(request: CompareMethodsRequest):
                 best_method = method
         
         comparison["summary"]["best_method"] = best_method
-        comparison["summary"]["best_score"] = best_score
+        comparison["summary"]["best_score"] = best_score if best_method else None
         
         logger.info(f"Comparison completed, best: {best_method} ({best_score:.4f})")
         
@@ -488,14 +495,21 @@ async def generate_synthetic_data(request: SyntheticDataRequest):
         generator = EnhancedMetroDataGenerator(num_trainsets=request.num_trainsets)
         data = generator.generate_complete_enhanced_dataset()
         
-        # Filter to match request parameters
-        # (Optional: adjust availability based on request params)
+        # Remove trainset_profiles as it contains non-serializable datetime objects
+        # and is not needed for optimization
+        data_for_response = {
+            "trainset_status": data["trainset_status"],
+            "fitness_certificates": data["fitness_certificates"],
+            "job_cards": data["job_cards"],
+            "component_health": data["component_health"],
+            "metadata": data.get("metadata", {})
+        }
         
         logger.info(f"Generated synthetic data with {len(data['trainset_status'])} trainsets")
         
         return JSONResponse(content={
             "success": True,
-            "data": data,
+            "data": data_for_response,
             "metadata": {
                 "num_trainsets": len(data['trainset_status']),
                 "num_fitness_certificates": len(data['fitness_certificates']),
