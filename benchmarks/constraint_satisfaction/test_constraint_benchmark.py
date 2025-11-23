@@ -1,20 +1,21 @@
 """
-Test Service Quality Benchmark
-Direct test of the service quality benchmarking system.
+Test Constraint Satisfaction Benchmark
 """
 import sys
 import os
+
+# Add project root to path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from DataService.enhanced_generator import EnhancedMetroDataGenerator
 from greedyOptim.scheduler import TrainsetSchedulingOptimizer
 from greedyOptim.models import OptimizationConfig
 from greedyOptim.service_blocks import create_service_blocks_for_schedule
-from benchmarks.service_quality import run_service_quality_benchmark
+from benchmarks.constraint_satisfaction import run_constraint_benchmark
 
 
 def create_schedule_with_service_blocks(result, method_name):
     """Create a schedule with service blocks from optimization result."""
-    # Generate service blocks for selected trains
     service_blocks_map = create_service_blocks_for_schedule(result.selected_trainsets)
     
     trainsets = []
@@ -53,7 +54,7 @@ def create_schedule_with_service_blocks(result, method_name):
 
 def main():
     print("=" * 80)
-    print("SERVICE QUALITY BENCHMARK TEST")
+    print("CONSTRAINT SATISFACTION BENCHMARK TEST")
     print("=" * 80)
     print()
     
@@ -92,15 +93,16 @@ def main():
         print(f"  Fitness score: {result.fitness_score:.2f}")
         print()
     
-    # Run service quality benchmark
+    # Run constraint satisfaction benchmark
     print("=" * 80)
-    print("RUNNING SERVICE QUALITY BENCHMARK")
+    print("RUNNING CONSTRAINT SATISFACTION BENCHMARK")
     print("=" * 80)
     print()
     
-    results = run_service_quality_benchmark(
+    results = run_constraint_benchmark(
         schedules=schedules,
-        output_file="service_quality_benchmark_results.json",
+        data=data,
+        output_file="constraint_satisfaction_results.json",
         verbose=True
     )
     
@@ -108,8 +110,8 @@ def main():
     print("=" * 80)
     print("BENCHMARK COMPLETE")
     print("=" * 80)
-    print(f"Results saved to: service_quality_benchmark_results.json")
-    print(f"Overall Quality Score: {results['aggregate_metrics']['avg_overall_score']:.2f}/100")
+    print(f"Results saved to: constraint_satisfaction_results.json")
+    print(f"Overall Constraint Score: {results['aggregate_metrics']['avg_overall_score']:.2f}/100")
 
 
 if __name__ == "__main__":
