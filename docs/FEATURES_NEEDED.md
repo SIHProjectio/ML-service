@@ -213,11 +213,11 @@ The GreedyOptim system uses constraint-based optimization algorithms (GA, PSO, C
 | Feature | Description | Priority | Importance |
 |---------|-------------|----------|------------|
 | `vibration_levels` | Bogie vibration (mm/s) | **LOW** | 2/5 |
-| `temperature_readings` | Motor temperature (°C) | **LOW** | 2/5 |
 | `power_consumption` | Energy usage (kWh) | **LOW** | 2/5 |
 | `door_cycle_count` | Door operations | **LOW** | 2/5 |
 
 **Use Case:** Real-time condition monitoring to update health scores
+**Note:** Temperature data removed - not used for optimization (only as optional constraint: max ~800°C)
 
 ---
 
@@ -499,10 +499,11 @@ dow_cos = cos(2 * π * day_of_week / 7)
 **Nice-to-Have:**
 
 1. **IoT Sensor Streams**
-   - Vibration, temperature, power
+   - Vibration, power consumption
    - Real-time monitoring
    - **Collection Method:** IoT platform integration
    - **Frequency:** Real-time (every second/minute)
+   - **Note:** Temperature excluded (not used in optimization)
 
 2. **External Factors**
    - Weather data
@@ -713,7 +714,7 @@ dow_cos = cos(2 * π * day_of_week / 7)
 4. **IoT Platform** (if available)
    - Real-time sensor data
    - Component health (automated)
-   - Vibration, temperature, etc.
+   - Vibration, power consumption, door cycles, etc.
 
 5. **Contract Management System**
    - Branding contracts

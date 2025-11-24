@@ -256,7 +256,7 @@ class EnhancedMetroDataGenerator:
                     estimated_hours = random.randint(2, 24)
                 
                 job = {
-                    "job_id": f"JC-{random.randint(10000, 99999)}",
+                    "job_card_id": f"JC-{random.randint(10000, 99999)}",
                     "trainset_id": ts_id,
                     "work_order_number": f"WO-{random.randint(100000, 999999)}",
                     "job_type": random.choice(job_types),
@@ -444,11 +444,6 @@ class EnhancedMetroDataGenerator:
                     "bogie_2": round(random.uniform(0.5, 3.5) / reliability_factor, 2),
                     "unit": "mm/s"
                 },
-                "temperature": {
-                    "motor_1": round(random.uniform(45, 85) + (1 - reliability_factor) * 10, 1),
-                    "motor_2": round(random.uniform(45, 85) + (1 - reliability_factor) * 10, 1),
-                    "unit": "°C"
-                },
                 "overall_condition": "Good" if reliability_factor > 0.85 else "Fair" if reliability_factor > 0.75 else "Poor"
             }
             sensor_data.append(sensors)
@@ -560,8 +555,7 @@ class EnhancedMetroDataGenerator:
         return {
             "date": datetime.now().date().isoformat(),
             "weather": {
-                "condition": random.choice(["Clear", "Cloudy", "Rainy"]),
-                "temperature": round(random.uniform(20, 35), 1)
+                "condition": random.choice(["Clear", "Cloudy", "Rainy"])
             },
             "ridership_forecast": {
                 "expected_passengers": random.randint(80000, 150000),

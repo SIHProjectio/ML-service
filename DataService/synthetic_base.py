@@ -119,13 +119,6 @@ class MetroSyntheticDataGenerator:
                     "bogie_2": round(random.uniform(0.5, 3.5), 2),
                     "unit": "mm/s"
                 },
-                "temperature": {
-                    "motor_1": round(random.uniform(45, 85), 1),
-                    "motor_2": round(random.uniform(45, 85), 1),
-                    "brake_disc": round(random.uniform(25, 120), 1),
-                    "cabin": round(random.uniform(18, 28), 1),
-                    "unit": "°C"
-                },
                 "pressure": {
                     "brake_system": round(random.uniform(5.5, 8.5), 2),
                     "pneumatic_doors": round(random.uniform(6.0, 8.0), 2),
@@ -266,7 +259,6 @@ class MetroSyntheticDataGenerator:
         return {
             "date": datetime.now().date().isoformat(),
             "weather": {
-                "temperature": round(random.uniform(20, 35), 1),
                 "humidity": random.randint(60, 90),
                 "rainfall_mm": round(random.uniform(0, 50), 1),
                 "condition": random.choice(["Clear", "Cloudy", "Rainy", "Stormy"])
