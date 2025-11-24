@@ -1,38 +1,38 @@
 {
   "benchmark_info": {
-    "timestamp": "2025-11-23T16:26:49.927745",
+    "timestamp": "2025-11-25T00:02:23.981978",
     "total_schedules": 3,
-    "total_time_seconds": 0.002,
-    "avg_analysis_time_ms": 0.33
+    "total_time_seconds": 0.001,
+    "avg_analysis_time_ms": 0.23
   },
   "aggregate_metrics": {
-    "avg_maintenance_score": 0.0,
+    "avg_maintenance_score": 33.33,
     "avg_turnaround_score": 100.0,
     "avg_energy_score": 0.0,
     "avg_certificate_score": 100.0,
     "avg_job_score": 60.0,
     "avg_component_score": 0.0,
-    "avg_overall_score": 46.0,
-    "best_maintenance_schedule": 1,
-    "best_maintenance_score": 0,
+    "avg_overall_score": 54.33,
+    "best_maintenance_schedule": 2,
+    "best_maintenance_score": 100,
     "best_turnaround_schedule": 1,
     "best_turnaround_score": 100,
     "best_energy_schedule": 1,
     "best_energy_score": 0,
-    "best_overall_schedule": 3,
-    "best_overall_score": 50.0,
-    "avg_overdue_maintenance": 1.0,
+    "best_overall_schedule": 2,
+    "best_overall_score": 73.0,
+    "avg_overdue_maintenance": 0.67,
     "avg_turnaround_violations": 0.0,
-    "avg_energy_violations": 41.0,
+    "avg_energy_violations": 42.33,
     "avg_expired_certs": 0.0,
     "avg_critical_jobs": 1.33,
     "avg_critical_components": 11.0,
-    "avg_analysis_time_ms": 0.33
+    "avg_analysis_time_ms": 0.23
   },
   "individual_results": [
     {
       "schedule_id": 1,
-      "analysis_time_ms": 0.44,
+      "analysis_time_ms": 0.26,
       "metrics": {
         "maintenance": {
           "trains_needing_maintenance": 1,
@@ -63,7 +63,7 @@
         },
         "certificates": {
           "expired": 0,
-          "expiring_soon": 6,
+          "expiring_soon": 7,
           "compliance_rate": 100.0,
           "score": 100
         },
@@ -84,16 +84,16 @@
     },
     {
       "schedule_id": 2,
-      "analysis_time_ms": 0.26,
+      "analysis_time_ms": 0.25,
       "metrics": {
         "maintenance": {
           "trains_needing_maintenance": 1,
-          "trains_scheduled_maintenance": 0,
-          "compliance_rate": 0.0,
-          "overdue_count": 1,
-          "violations": 1,
+          "trains_scheduled_maintenance": 1,
+          "compliance_rate": 100.0,
+          "overdue_count": 0,
+          "violations": 0,
           "avg_delay_days": 0.0,
-          "score": 0
+          "score": 100
         },
         "turnaround": {
           "total_turnarounds": 0,
@@ -105,23 +105,23 @@
           "score": 100
         },
         "energy": {
-          "total_daily_energy_kwh": 36840.0,
+          "total_daily_energy_kwh": 41700.0,
           "peak_power_kw": 131.19,
           "efficiency_kwh_per_km": 2.5,
-          "range_violations": 28,
-          "charging_opportunities": 20,
-          "violations": 28,
+          "range_violations": 32,
+          "charging_opportunities": 23,
+          "violations": 32,
           "score": 0
         },
         "certificates": {
           "expired": 0,
-          "expiring_soon": 3,
+          "expiring_soon": 5,
           "compliance_rate": 100.0,
           "score": 100
         },
         "jobs": {
           "critical_jobs": 1,
-          "blocking_jobs": 7,
+          "blocking_jobs": 4,
           "violations": 1,
           "score": 80.0
         },
@@ -131,12 +131,12 @@
           "violations": 29,
           "score": 0
         },
-        "overall_constraint_score": 48.0
+        "overall_constraint_score": 73.0
       }
     },
     {
       "schedule_id": 3,
-      "analysis_time_ms": 0.3,
+      "analysis_time_ms": 0.18,
       "metrics": {
         "maintenance": {
           "trains_needing_maintenance": 1,
