@@ -74,7 +74,7 @@ def main():
     )
     
     # Generate schedules using different methods
-    methods = ['ga', 'pso', 'sa']
+    methods = ['ga', 'pso', 'sa', 'cmaes', 'nsga2', 'adaptive', 'ensemble']
     schedules = []
     
     print(f"Generating {len(methods)} schedules using different optimization methods...")

@@ -152,7 +152,7 @@ class SchedulePerformanceBenchmark:
     def benchmark_greedy_optimizers(
         self,
         num_trains: int,
-        methods: List[str] = ['ga', 'cmaes', 'pso'],
+        methods: List[str] = ['ga', 'cmaes', 'pso', 'sa', 'nsga2', 'adaptive', 'ensemble'],
         num_runs: int = 3
     ) -> Dict[str, List[Dict[str, Any]]]:
         """Benchmark greedyOptim methods"""
@@ -451,8 +451,8 @@ def main():
     parser.add_argument(
         "--methods",
         nargs="+",
-        default=['ga', 'cmaes', 'pso'],
-        help="Greedy optimization methods to test (default: ga cmaes pso)"
+        default=['ga', 'cmaes', 'pso', 'sa', 'nsga2', 'adaptive', 'ensemble'],
+        help="Greedy optimization methods to test (default: ga cmaes pso sa nsga2 adaptive ensemble)"
     )
     parser.add_argument(
         "--runs",

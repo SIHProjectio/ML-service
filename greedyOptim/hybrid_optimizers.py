@@ -237,9 +237,16 @@ class AdaptiveOptimizer:
                 improvements[name] = 0
         
         # Update probabilities (softmax-like)
-        total_improvement = sum(improvements.values()) + 1e-6
+        # Calculate raw weights
+        weights = {}
         for name in self.optimizers.keys():
-            self.selection_probabilities[name] = (improvements[name] + 0.1) / (total_improvement + 0.4)
+            weights[name] = improvements[name] + 0.1
+            
+        total_weight = sum(weights.values())
+        
+        # Normalize
+        for name in self.optimizers.keys():
+            self.selection_probabilities[name] = weights[name] / total_weight
     
     def select_optimizer(self) -> str:
         """Select optimizer based on adaptive probabilities."""
