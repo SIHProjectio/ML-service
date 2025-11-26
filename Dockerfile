@@ -24,4 +24,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:7860/health')"
 
 # Run the application
-CMD ["uvicorn", "DataService.api:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "api.greedyoptim_api:app", "--host", "0.0.0.0", "--port", "7860"]
