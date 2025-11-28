@@ -1,0 +1,2956 @@
+{
+  "trainset_status": [
+    {
+      "trainset_id": "TS-001",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-10-24",
+      "total_mileage_km": 131774.13,
+      "age_years": 8
+    },
+    {
+      "trainset_id": "TS-002",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-10-13",
+      "total_mileage_km": 89544.91,
+      "age_years": 5
+    },
+    {
+      "trainset_id": "TS-003",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-09-22",
+      "total_mileage_km": 83774.71,
+      "age_years": 8
+    },
+    {
+      "trainset_id": "TS-004",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-05",
+      "total_mileage_km": 125601.67,
+      "age_years": 1
+    },
+    {
+      "trainset_id": "TS-005",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-26",
+      "total_mileage_km": 156593.58,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-006",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-09-05",
+      "total_mileage_km": 71040.57,
+      "age_years": 3
+    },
+    {
+      "trainset_id": "TS-007",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-11-04",
+      "total_mileage_km": 146136.73,
+      "age_years": 8
+    },
+    {
+      "trainset_id": "TS-008",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-08",
+      "total_mileage_km": 62366.46,
+      "age_years": 3
+    },
+    {
+      "trainset_id": "TS-009",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-11-17",
+      "total_mileage_km": 145758.47,
+      "age_years": 8
+    },
+    {
+      "trainset_id": "TS-010",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-06",
+      "total_mileage_km": 160763.11,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-011",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-10-18",
+      "total_mileage_km": 155347.61,
+      "age_years": 6
+    },
+    {
+      "trainset_id": "TS-012",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-10-04",
+      "total_mileage_km": 177302.58,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-013",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-10-09",
+      "total_mileage_km": 133497.24,
+      "age_years": 6
+    },
+    {
+      "trainset_id": "TS-014",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-11-18",
+      "total_mileage_km": 151328.62,
+      "age_years": 5
+    },
+    {
+      "trainset_id": "TS-015",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-09-13",
+      "total_mileage_km": 173391.9,
+      "age_years": 6
+    },
+    {
+      "trainset_id": "TS-016",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-11-16",
+      "total_mileage_km": 131152.3,
+      "age_years": 2
+    },
+    {
+      "trainset_id": "TS-017",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-18",
+      "total_mileage_km": 157666.64,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-018",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-11-12",
+      "total_mileage_km": 83766.69,
+      "age_years": 1
+    },
+    {
+      "trainset_id": "TS-019",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-10",
+      "total_mileage_km": 142206.21,
+      "age_years": 6
+    },
+    {
+      "trainset_id": "TS-020",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-14",
+      "total_mileage_km": 178067.28,
+      "age_years": 4
+    },
+    {
+      "trainset_id": "TS-021",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-09-26",
+      "total_mileage_km": 133930.73,
+      "age_years": 3
+    },
+    {
+      "trainset_id": "TS-022",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-21",
+      "total_mileage_km": 109011.76,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-023",
+      "operational_status": "IN_SERVICE",
+      "last_maintenance_date": "2025-09-27",
+      "total_mileage_km": 60427.22,
+      "age_years": 1
+    },
+    {
+      "trainset_id": "TS-024",
+      "operational_status": "STANDBY",
+      "last_maintenance_date": "2025-11-17",
+      "total_mileage_km": 103344.64,
+      "age_years": 3
+    },
+    {
+      "trainset_id": "TS-025",
+      "operational_status": "MAINTENANCE",
+      "last_maintenance_date": "2025-11-13",
+      "total_mileage_km": 144128.47,
+      "age_years": 2
+    },
+    {
+      "trainset_id": "TS-026",
+      "operational_status": "MAINTENANCE",
+      "last_maintenance_date": "2025-09-17",
+      "total_mileage_km": 126495.44,
+      "age_years": 1
+    },
+    {
+      "trainset_id": "TS-027",
+      "operational_status": "OUT_OF_SERVICE",
+      "last_maintenance_date": "2025-11-16",
+      "total_mileage_km": 139026.71,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-028",
+      "operational_status": "OUT_OF_SERVICE",
+      "last_maintenance_date": "2025-11-15",
+      "total_mileage_km": 91684.88,
+      "age_years": 4
+    },
+    {
+      "trainset_id": "TS-029",
+      "operational_status": "MAINTENANCE",
+      "last_maintenance_date": "2025-11-01",
+      "total_mileage_km": 73541.88,
+      "age_years": 7
+    },
+    {
+      "trainset_id": "TS-030",
+      "operational_status": "OUT_OF_SERVICE",
+      "last_maintenance_date": "2025-09-03",
+      "total_mileage_km": 190575.95,
+      "age_years": 1
+    }
+  ],
+  "fitness_certificates": [
+    {
+      "trainset_id": "TS-001",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-13",
+      "expiry_date": "2026-09-13"
+    },
+    {
+      "trainset_id": "TS-001",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-23",
+      "expiry_date": "2026-09-23"
+    },
+    {
+      "trainset_id": "TS-001",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-09",
+      "expiry_date": "2026-10-09"
+    },
+    {
+      "trainset_id": "TS-001",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-03",
+      "expiry_date": "2026-09-03"
+    },
+    {
+      "trainset_id": "TS-001",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-06-11",
+      "expiry_date": "2026-06-11"
+    },
+    {
+      "trainset_id": "TS-002",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-22",
+      "expiry_date": "2026-08-22"
+    },
+    {
+      "trainset_id": "TS-002",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-30",
+      "expiry_date": "2026-08-30"
+    },
+    {
+      "trainset_id": "TS-002",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-21",
+      "expiry_date": "2026-07-21"
+    },
+    {
+      "trainset_id": "TS-002",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-10-27",
+      "expiry_date": "2026-10-27"
+    },
+    {
+      "trainset_id": "TS-002",
+      "department": "OPERATIONS",
+      "status": "PENDING",
+      "issue_date": "2025-09-05",
+      "expiry_date": "2026-09-05"
+    },
+    {
+      "trainset_id": "TS-003",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-10-11",
+      "expiry_date": "2026-10-11"
+    },
+    {
+      "trainset_id": "TS-003",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-30",
+      "expiry_date": "2026-08-30"
+    },
+    {
+      "trainset_id": "TS-003",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-14",
+      "expiry_date": "2026-09-14"
+    },
+    {
+      "trainset_id": "TS-003",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-09",
+      "expiry_date": "2026-09-09"
+    },
+    {
+      "trainset_id": "TS-003",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-05",
+      "expiry_date": "2026-07-05"
+    },
+    {
+      "trainset_id": "TS-004",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-06",
+      "expiry_date": "2026-08-06"
+    },
+    {
+      "trainset_id": "TS-004",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-05",
+      "expiry_date": "2026-07-05"
+    },
+    {
+      "trainset_id": "TS-004",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-09",
+      "expiry_date": "2026-07-09"
+    },
+    {
+      "trainset_id": "TS-004",
+      "department": "SAFETY",
+      "status": "EXPIRED",
+      "issue_date": "2025-07-25",
+      "expiry_date": "2026-07-25"
+    },
+    {
+      "trainset_id": "TS-004",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-03",
+      "expiry_date": "2026-07-03"
+    },
+    {
+      "trainset_id": "TS-005",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-07-11",
+      "expiry_date": "2026-07-11"
+    },
+    {
+      "trainset_id": "TS-005",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-21",
+      "expiry_date": "2026-07-21"
+    },
+    {
+      "trainset_id": "TS-005",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-22",
+      "expiry_date": "2026-09-22"
+    },
+    {
+      "trainset_id": "TS-005",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-10-09",
+      "expiry_date": "2026-10-09"
+    },
+    {
+      "trainset_id": "TS-005",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-18",
+      "expiry_date": "2026-07-18"
+    },
+    {
+      "trainset_id": "TS-006",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-19",
+      "expiry_date": "2026-09-19"
+    },
+    {
+      "trainset_id": "TS-006",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-10",
+      "expiry_date": "2026-07-10"
+    },
+    {
+      "trainset_id": "TS-006",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-21",
+      "expiry_date": "2026-08-21"
+    },
+    {
+      "trainset_id": "TS-006",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-02",
+      "expiry_date": "2026-08-02"
+    },
+    {
+      "trainset_id": "TS-006",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-27",
+      "expiry_date": "2026-10-27"
+    },
+    {
+      "trainset_id": "TS-007",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-05",
+      "expiry_date": "2026-09-05"
+    },
+    {
+      "trainset_id": "TS-007",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-30",
+      "expiry_date": "2026-08-30"
+    },
+    {
+      "trainset_id": "TS-007",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-12",
+      "expiry_date": "2026-08-12"
+    },
+    {
+      "trainset_id": "TS-007",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-19",
+      "expiry_date": "2026-08-19"
+    },
+    {
+      "trainset_id": "TS-007",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-22",
+      "expiry_date": "2026-09-22"
+    },
+    {
+      "trainset_id": "TS-008",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-06-03",
+      "expiry_date": "2026-06-03"
+    },
+    {
+      "trainset_id": "TS-008",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-03",
+      "expiry_date": "2026-09-03"
+    },
+    {
+      "trainset_id": "TS-008",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-28",
+      "expiry_date": "2026-09-28"
+    },
+    {
+      "trainset_id": "TS-008",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-01",
+      "expiry_date": "2026-08-01"
+    },
+    {
+      "trainset_id": "TS-008",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-03",
+      "expiry_date": "2026-07-03"
+    },
+    {
+      "trainset_id": "TS-009",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-07-23",
+      "expiry_date": "2026-07-23"
+    },
+    {
+      "trainset_id": "TS-009",
+      "department": "ELECTRICAL",
+      "status": "SUSPENDED",
+      "issue_date": "2025-07-17",
+      "expiry_date": "2026-07-17"
+    },
+    {
+      "trainset_id": "TS-009",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-03",
+      "expiry_date": "2026-06-03"
+    },
+    {
+      "trainset_id": "TS-009",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-10",
+      "expiry_date": "2026-09-10"
+    },
+    {
+      "trainset_id": "TS-009",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-30",
+      "expiry_date": "2026-07-30"
+    },
+    {
+      "trainset_id": "TS-010",
+      "department": "ROLLING_STOCK",
+      "status": "PENDING",
+      "issue_date": "2025-09-20",
+      "expiry_date": "2026-09-20"
+    },
+    {
+      "trainset_id": "TS-010",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-11",
+      "expiry_date": "2026-08-11"
+    },
+    {
+      "trainset_id": "TS-010",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-23",
+      "expiry_date": "2026-06-23"
+    },
+    {
+      "trainset_id": "TS-010",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-26",
+      "expiry_date": "2026-09-26"
+    },
+    {
+      "trainset_id": "TS-010",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-08-19",
+      "expiry_date": "2026-08-19"
+    },
+    {
+      "trainset_id": "TS-011",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-24",
+      "expiry_date": "2026-09-24"
+    },
+    {
+      "trainset_id": "TS-011",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-16",
+      "expiry_date": "2026-06-16"
+    },
+    {
+      "trainset_id": "TS-011",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-01",
+      "expiry_date": "2026-09-01"
+    },
+    {
+      "trainset_id": "TS-011",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-17",
+      "expiry_date": "2026-09-17"
+    },
+    {
+      "trainset_id": "TS-011",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-12",
+      "expiry_date": "2026-10-12"
+    },
+    {
+      "trainset_id": "TS-012",
+      "department": "ROLLING_STOCK",
+      "status": "EXPIRED",
+      "issue_date": "2025-08-18",
+      "expiry_date": "2026-08-18"
+    },
+    {
+      "trainset_id": "TS-012",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-20",
+      "expiry_date": "2026-10-20"
+    },
+    {
+      "trainset_id": "TS-012",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-26",
+      "expiry_date": "2026-10-26"
+    },
+    {
+      "trainset_id": "TS-012",
+      "department": "SAFETY",
+      "status": "PENDING",
+      "issue_date": "2025-10-09",
+      "expiry_date": "2026-10-09"
+    },
+    {
+      "trainset_id": "TS-012",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-06",
+      "expiry_date": "2026-07-06"
+    },
+    {
+      "trainset_id": "TS-013",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-29",
+      "expiry_date": "2026-08-29"
+    },
+    {
+      "trainset_id": "TS-013",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-22",
+      "expiry_date": "2026-09-22"
+    },
+    {
+      "trainset_id": "TS-013",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-03",
+      "expiry_date": "2026-07-03"
+    },
+    {
+      "trainset_id": "TS-013",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-06",
+      "expiry_date": "2026-09-06"
+    },
+    {
+      "trainset_id": "TS-013",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-24",
+      "expiry_date": "2026-10-24"
+    },
+    {
+      "trainset_id": "TS-014",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-04",
+      "expiry_date": "2026-08-04"
+    },
+    {
+      "trainset_id": "TS-014",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-13",
+      "expiry_date": "2026-10-13"
+    },
+    {
+      "trainset_id": "TS-014",
+      "department": "MECHANICAL",
+      "status": "PENDING",
+      "issue_date": "2025-09-11",
+      "expiry_date": "2026-09-11"
+    },
+    {
+      "trainset_id": "TS-014",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-22",
+      "expiry_date": "2026-07-22"
+    },
+    {
+      "trainset_id": "TS-014",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-15",
+      "expiry_date": "2026-10-15"
+    },
+    {
+      "trainset_id": "TS-015",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-04",
+      "expiry_date": "2026-08-04"
+    },
+    {
+      "trainset_id": "TS-015",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-30",
+      "expiry_date": "2026-07-30"
+    },
+    {
+      "trainset_id": "TS-015",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-05",
+      "expiry_date": "2026-07-05"
+    },
+    {
+      "trainset_id": "TS-015",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-28",
+      "expiry_date": "2026-07-28"
+    },
+    {
+      "trainset_id": "TS-015",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-08-17",
+      "expiry_date": "2026-08-17"
+    },
+    {
+      "trainset_id": "TS-016",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-16",
+      "expiry_date": "2026-09-16"
+    },
+    {
+      "trainset_id": "TS-016",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-02",
+      "expiry_date": "2026-08-02"
+    },
+    {
+      "trainset_id": "TS-016",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-22",
+      "expiry_date": "2026-10-22"
+    },
+    {
+      "trainset_id": "TS-016",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-25",
+      "expiry_date": "2026-09-25"
+    },
+    {
+      "trainset_id": "TS-016",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-29",
+      "expiry_date": "2026-09-29"
+    },
+    {
+      "trainset_id": "TS-017",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-12",
+      "expiry_date": "2026-08-12"
+    },
+    {
+      "trainset_id": "TS-017",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-16",
+      "expiry_date": "2026-08-16"
+    },
+    {
+      "trainset_id": "TS-017",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-11",
+      "expiry_date": "2026-08-11"
+    },
+    {
+      "trainset_id": "TS-017",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-06-18",
+      "expiry_date": "2026-06-18"
+    },
+    {
+      "trainset_id": "TS-017",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-16",
+      "expiry_date": "2026-10-16"
+    },
+    {
+      "trainset_id": "TS-018",
+      "department": "ROLLING_STOCK",
+      "status": "EXPIRED",
+      "issue_date": "2025-09-01",
+      "expiry_date": "2026-09-01"
+    },
+    {
+      "trainset_id": "TS-018",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-13",
+      "expiry_date": "2026-06-13"
+    },
+    {
+      "trainset_id": "TS-018",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-07",
+      "expiry_date": "2026-07-07"
+    },
+    {
+      "trainset_id": "TS-018",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-10-01",
+      "expiry_date": "2026-10-01"
+    },
+    {
+      "trainset_id": "TS-018",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-06-18",
+      "expiry_date": "2026-06-18"
+    },
+    {
+      "trainset_id": "TS-019",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-10-07",
+      "expiry_date": "2026-10-07"
+    },
+    {
+      "trainset_id": "TS-019",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-19",
+      "expiry_date": "2026-07-19"
+    },
+    {
+      "trainset_id": "TS-019",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-17",
+      "expiry_date": "2026-10-17"
+    },
+    {
+      "trainset_id": "TS-019",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-10",
+      "expiry_date": "2026-07-10"
+    },
+    {
+      "trainset_id": "TS-019",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-08-06",
+      "expiry_date": "2026-08-06"
+    },
+    {
+      "trainset_id": "TS-020",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-10-22",
+      "expiry_date": "2026-10-22"
+    },
+    {
+      "trainset_id": "TS-020",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-19",
+      "expiry_date": "2026-06-19"
+    },
+    {
+      "trainset_id": "TS-020",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-03",
+      "expiry_date": "2026-08-03"
+    },
+    {
+      "trainset_id": "TS-020",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-10",
+      "expiry_date": "2026-08-10"
+    },
+    {
+      "trainset_id": "TS-020",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-11",
+      "expiry_date": "2026-09-11"
+    },
+    {
+      "trainset_id": "TS-021",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-10-28",
+      "expiry_date": "2026-10-28"
+    },
+    {
+      "trainset_id": "TS-021",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-28",
+      "expiry_date": "2026-08-28"
+    },
+    {
+      "trainset_id": "TS-021",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-15",
+      "expiry_date": "2026-10-15"
+    },
+    {
+      "trainset_id": "TS-021",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-10-11",
+      "expiry_date": "2026-10-11"
+    },
+    {
+      "trainset_id": "TS-021",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-06-27",
+      "expiry_date": "2026-06-27"
+    },
+    {
+      "trainset_id": "TS-022",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-09-23",
+      "expiry_date": "2026-09-23"
+    },
+    {
+      "trainset_id": "TS-022",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-20",
+      "expiry_date": "2026-10-20"
+    },
+    {
+      "trainset_id": "TS-022",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-27",
+      "expiry_date": "2026-09-27"
+    },
+    {
+      "trainset_id": "TS-022",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-06-24",
+      "expiry_date": "2026-06-24"
+    },
+    {
+      "trainset_id": "TS-022",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-10-25",
+      "expiry_date": "2026-10-25"
+    },
+    {
+      "trainset_id": "TS-023",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-06-26",
+      "expiry_date": "2026-06-26"
+    },
+    {
+      "trainset_id": "TS-023",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-14",
+      "expiry_date": "2026-10-14"
+    },
+    {
+      "trainset_id": "TS-023",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-17",
+      "expiry_date": "2026-07-17"
+    },
+    {
+      "trainset_id": "TS-023",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-15",
+      "expiry_date": "2026-07-15"
+    },
+    {
+      "trainset_id": "TS-023",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-27",
+      "expiry_date": "2026-09-27"
+    },
+    {
+      "trainset_id": "TS-024",
+      "department": "ROLLING_STOCK",
+      "status": "SUSPENDED",
+      "issue_date": "2025-07-16",
+      "expiry_date": "2026-07-16"
+    },
+    {
+      "trainset_id": "TS-024",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-09",
+      "expiry_date": "2026-07-09"
+    },
+    {
+      "trainset_id": "TS-024",
+      "department": "MECHANICAL",
+      "status": "PENDING",
+      "issue_date": "2025-06-27",
+      "expiry_date": "2026-06-27"
+    },
+    {
+      "trainset_id": "TS-024",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-04",
+      "expiry_date": "2026-07-04"
+    },
+    {
+      "trainset_id": "TS-024",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-08-08",
+      "expiry_date": "2026-08-08"
+    },
+    {
+      "trainset_id": "TS-025",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-10-25",
+      "expiry_date": "2026-10-25"
+    },
+    {
+      "trainset_id": "TS-025",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-15",
+      "expiry_date": "2026-09-15"
+    },
+    {
+      "trainset_id": "TS-025",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-09",
+      "expiry_date": "2026-10-09"
+    },
+    {
+      "trainset_id": "TS-025",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-04",
+      "expiry_date": "2026-08-04"
+    },
+    {
+      "trainset_id": "TS-025",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-08-17",
+      "expiry_date": "2026-08-17"
+    },
+    {
+      "trainset_id": "TS-026",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-07-21",
+      "expiry_date": "2026-07-21"
+    },
+    {
+      "trainset_id": "TS-026",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-14",
+      "expiry_date": "2026-09-14"
+    },
+    {
+      "trainset_id": "TS-026",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-17",
+      "expiry_date": "2026-09-17"
+    },
+    {
+      "trainset_id": "TS-026",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-13",
+      "expiry_date": "2026-09-13"
+    },
+    {
+      "trainset_id": "TS-026",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-29",
+      "expiry_date": "2026-09-29"
+    },
+    {
+      "trainset_id": "TS-027",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-07-04",
+      "expiry_date": "2026-07-04"
+    },
+    {
+      "trainset_id": "TS-027",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-07-22",
+      "expiry_date": "2026-07-22"
+    },
+    {
+      "trainset_id": "TS-027",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-14",
+      "expiry_date": "2026-09-14"
+    },
+    {
+      "trainset_id": "TS-027",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-08-07",
+      "expiry_date": "2026-08-07"
+    },
+    {
+      "trainset_id": "TS-027",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-07-23",
+      "expiry_date": "2026-07-23"
+    },
+    {
+      "trainset_id": "TS-028",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-07-07",
+      "expiry_date": "2026-07-07"
+    },
+    {
+      "trainset_id": "TS-028",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-26",
+      "expiry_date": "2026-10-26"
+    },
+    {
+      "trainset_id": "TS-028",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-06-20",
+      "expiry_date": "2026-06-20"
+    },
+    {
+      "trainset_id": "TS-028",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-07-17",
+      "expiry_date": "2026-07-17"
+    },
+    {
+      "trainset_id": "TS-028",
+      "department": "OPERATIONS",
+      "status": "EXPIRED",
+      "issue_date": "2025-08-09",
+      "expiry_date": "2026-08-09"
+    },
+    {
+      "trainset_id": "TS-029",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-11",
+      "expiry_date": "2026-08-11"
+    },
+    {
+      "trainset_id": "TS-029",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-09-05",
+      "expiry_date": "2026-09-05"
+    },
+    {
+      "trainset_id": "TS-029",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-16",
+      "expiry_date": "2026-10-16"
+    },
+    {
+      "trainset_id": "TS-029",
+      "department": "SAFETY",
+      "status": "SUSPENDED",
+      "issue_date": "2025-09-24",
+      "expiry_date": "2026-09-24"
+    },
+    {
+      "trainset_id": "TS-029",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-06-27",
+      "expiry_date": "2026-06-27"
+    },
+    {
+      "trainset_id": "TS-030",
+      "department": "ROLLING_STOCK",
+      "status": "ISSUED",
+      "issue_date": "2025-08-17",
+      "expiry_date": "2026-08-17"
+    },
+    {
+      "trainset_id": "TS-030",
+      "department": "ELECTRICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-10-25",
+      "expiry_date": "2026-10-25"
+    },
+    {
+      "trainset_id": "TS-030",
+      "department": "MECHANICAL",
+      "status": "ISSUED",
+      "issue_date": "2025-08-31",
+      "expiry_date": "2026-08-31"
+    },
+    {
+      "trainset_id": "TS-030",
+      "department": "SAFETY",
+      "status": "ISSUED",
+      "issue_date": "2025-09-25",
+      "expiry_date": "2026-09-25"
+    },
+    {
+      "trainset_id": "TS-030",
+      "department": "OPERATIONS",
+      "status": "ISSUED",
+      "issue_date": "2025-09-21",
+      "expiry_date": "2026-09-21"
+    }
+  ],
+  "component_health": [
+    {
+      "trainset_id": "TS-001",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 49.6,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Brake_System",
+      "status": "FAIR",
+      "wear_level": 88.5,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 47.3,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 20.9,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 12.8,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 13.2,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 10.8,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-001",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 24.4,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 23.6,
+      "last_inspection": "2025-10-31"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 15.3,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 17.8,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 44.2,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 34.1,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 10.3,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Coupler",
+      "status": "POOR",
+      "wear_level": 90.7,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-002",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 15.6,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 27.2,
+      "last_inspection": "2025-11-11"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 30.4,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 44.2,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 13.7,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 27.6,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 28.2,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 32.1,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-003",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 10.1,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 46.5,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 28.1,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "HVAC",
+      "status": "CRITICAL",
+      "wear_level": 90.2,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 32.1,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 24.5,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 46.0,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 15.6,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-004",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 27.7,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 37.8,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 42.4,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 31.7,
+      "last_inspection": "2025-11-04"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 21.3,
+      "last_inspection": "2025-11-04"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 41.0,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 26.7,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 36.5,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-005",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 44.9,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 48.4,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 18.2,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 38.2,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 36.7,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 36.1,
+      "last_inspection": "2025-10-31"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 49.7,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 24.4,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-006",
+      "component": "Battery",
+      "status": "POOR",
+      "wear_level": 84.0,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 33.3,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Brake_System",
+      "status": "CRITICAL",
+      "wear_level": 62.2,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 36.7,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 32.9,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 38.9,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 11.7,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 49.9,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-007",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 47.1,
+      "last_inspection": "2025-11-11"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 21.5,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 37.5,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 11.1,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 12.0,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 16.8,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Bogie",
+      "status": "CRITICAL",
+      "wear_level": 86.7,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 49.2,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-008",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 30.8,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 24.3,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 25.9,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 49.3,
+      "last_inspection": "2025-10-31"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 11.9,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 33.2,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 31.8,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Coupler",
+      "status": "POOR",
+      "wear_level": 81.1,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-009",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 25.7,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 21.1,
+      "last_inspection": "2025-10-31"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Brake_System",
+      "status": "FAIR",
+      "wear_level": 82.9,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 49.8,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 39.4,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 35.9,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 11.5,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 47.6,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-010",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 31.6,
+      "last_inspection": "2025-11-04"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 32.2,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 14.9,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 46.3,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 12.8,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 41.7,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 32.6,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 25.2,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-011",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 47.8,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 32.6,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 49.0,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 27.2,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 14.2,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 12.0,
+      "last_inspection": "2025-11-11"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 33.5,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 24.2,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-012",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 18.9,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 22.4,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 44.9,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 31.3,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 12.6,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 34.7,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Bogie",
+      "status": "FAIR",
+      "wear_level": 86.2,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Coupler",
+      "status": "FAIR",
+      "wear_level": 66.2,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-013",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 27.7,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 49.2,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Brake_System",
+      "status": "FAIR",
+      "wear_level": 92.1,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 41.1,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 45.9,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 26.3,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 37.1,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 49.7,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-014",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 47.4,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 45.7,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 31.5,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 11.8,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Door_System",
+      "status": "FAIR",
+      "wear_level": 68.6,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 12.6,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 22.0,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 36.4,
+      "last_inspection": "2025-10-31"
+    },
+    {
+      "trainset_id": "TS-015",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 35.6,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 14.5,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 46.7,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 30.8,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 27.4,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 10.8,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 49.0,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 15.1,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-016",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 14.0,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 33.8,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 35.2,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 44.3,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 12.2,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 15.1,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Bogie",
+      "status": "CRITICAL",
+      "wear_level": 77.5,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 20.9,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-017",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 44.4,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 39.4,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 14.6,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 49.8,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 41.1,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Pantograph",
+      "status": "FAIR",
+      "wear_level": 88.0,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Bogie",
+      "status": "CRITICAL",
+      "wear_level": 85.3,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 40.3,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-018",
+      "component": "Battery",
+      "status": "EXCELLENT",
+      "wear_level": 29.5,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Traction_Motor",
+      "status": "FAIR",
+      "wear_level": 76.0,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 45.6,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 21.3,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 20.2,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Pantograph",
+      "status": "FAIR",
+      "wear_level": 75.6,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 37.9,
+      "last_inspection": "2025-11-09"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Coupler",
+      "status": "POOR",
+      "wear_level": 91.9,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-019",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 45.8,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 29.1,
+      "last_inspection": "2025-11-11"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 39.9,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 24.9,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 36.7,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 37.2,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 44.7,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 15.6,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-020",
+      "component": "Battery",
+      "status": "CRITICAL",
+      "wear_level": 89.1,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 14.0,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 39.5,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "HVAC",
+      "status": "POOR",
+      "wear_level": 89.6,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 18.1,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 33.9,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Bogie",
+      "status": "CRITICAL",
+      "wear_level": 67.7,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 38.2,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-021",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 14.0,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 36.3,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 48.0,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 26.4,
+      "last_inspection": "2025-11-22"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 18.5,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 13.2,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 22.8,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 20.4,
+      "last_inspection": "2025-11-07"
+    },
+    {
+      "trainset_id": "TS-022",
+      "component": "Battery",
+      "status": "POOR",
+      "wear_level": 92.0,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 34.6,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 40.2,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 12.5,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Door_System",
+      "status": "FAIR",
+      "wear_level": 91.8,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 32.2,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Bogie",
+      "status": "FAIR",
+      "wear_level": 92.1,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Coupler",
+      "status": "POOR",
+      "wear_level": 79.7,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-023",
+      "component": "Battery",
+      "status": "POOR",
+      "wear_level": 69.6,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 39.5,
+      "last_inspection": "2025-11-06"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 29.7,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 17.8,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Door_System",
+      "status": "POOR",
+      "wear_level": 91.7,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Pantograph",
+      "status": "GOOD",
+      "wear_level": 31.5,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 43.8,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 44.1,
+      "last_inspection": "2025-11-16"
+    },
+    {
+      "trainset_id": "TS-024",
+      "component": "Battery",
+      "status": "FAIR",
+      "wear_level": 67.8,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 12.1,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 19.6,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 27.7,
+      "last_inspection": "2025-11-12"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Door_System",
+      "status": "CRITICAL",
+      "wear_level": 83.8,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Pantograph",
+      "status": "CRITICAL",
+      "wear_level": 71.4,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Bogie",
+      "status": "POOR",
+      "wear_level": 94.8,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 16.1,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-025",
+      "component": "Battery",
+      "status": "FAIR",
+      "wear_level": 61.5,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 25.9,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 45.6,
+      "last_inspection": "2025-11-17"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 10.2,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 46.7,
+      "last_inspection": "2025-11-28"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 45.3,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 41.4,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 42.0,
+      "last_inspection": "2025-11-14"
+    },
+    {
+      "trainset_id": "TS-026",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 13.7,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Traction_Motor",
+      "status": "GOOD",
+      "wear_level": 47.6,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 35.0,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 32.6,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 21.0,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 33.1,
+      "last_inspection": "2025-11-02"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 45.9,
+      "last_inspection": "2025-11-18"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Coupler",
+      "status": "GOOD",
+      "wear_level": 17.3,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-027",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 15.8,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 29.9,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Brake_System",
+      "status": "EXCELLENT",
+      "wear_level": 35.1,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 49.9,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Door_System",
+      "status": "GOOD",
+      "wear_level": 35.7,
+      "last_inspection": "2025-11-04"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 37.9,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 31.5,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 25.1,
+      "last_inspection": "2025-10-30"
+    },
+    {
+      "trainset_id": "TS-028",
+      "component": "Battery",
+      "status": "POOR",
+      "wear_level": 90.2,
+      "last_inspection": "2025-11-10"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 44.1,
+      "last_inspection": "2025-11-21"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 15.6,
+      "last_inspection": "2025-11-08"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "HVAC",
+      "status": "GOOD",
+      "wear_level": 34.8,
+      "last_inspection": "2025-11-13"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 28.9,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 46.1,
+      "last_inspection": "2025-11-01"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Bogie",
+      "status": "EXCELLENT",
+      "wear_level": 40.8,
+      "last_inspection": "2025-11-05"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Coupler",
+      "status": "FAIR",
+      "wear_level": 86.6,
+      "last_inspection": "2025-11-23"
+    },
+    {
+      "trainset_id": "TS-029",
+      "component": "Battery",
+      "status": "GOOD",
+      "wear_level": 40.4,
+      "last_inspection": "2025-11-20"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Traction_Motor",
+      "status": "EXCELLENT",
+      "wear_level": 41.0,
+      "last_inspection": "2025-11-24"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Brake_System",
+      "status": "GOOD",
+      "wear_level": 36.0,
+      "last_inspection": "2025-11-26"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "HVAC",
+      "status": "EXCELLENT",
+      "wear_level": 21.4,
+      "last_inspection": "2025-11-25"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Door_System",
+      "status": "EXCELLENT",
+      "wear_level": 14.4,
+      "last_inspection": "2025-11-11"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Pantograph",
+      "status": "EXCELLENT",
+      "wear_level": 20.0,
+      "last_inspection": "2025-11-15"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Bogie",
+      "status": "GOOD",
+      "wear_level": 30.0,
+      "last_inspection": "2025-11-19"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Coupler",
+      "status": "EXCELLENT",
+      "wear_level": 24.2,
+      "last_inspection": "2025-11-27"
+    },
+    {
+      "trainset_id": "TS-030",
+      "component": "Battery",
+      "status": "POOR",
+      "wear_level": 62.6,
+      "last_inspection": "2025-11-21"
+    }
+  ],
+  "date": "2025-11-29",
+  "method": "ga",
+  "config": {
+    "required_service_trains": 15,
+    "min_standby": 2,
+    "population_size": 50,
+    "generations": 100
+  }
+}
