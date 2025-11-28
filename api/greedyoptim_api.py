@@ -104,7 +104,7 @@ class ScheduleOptimizationRequest(BaseModel):
     """Request for schedule optimization"""
     trainset_status: List[TrainsetStatusInput]
     fitness_certificates: List[FitnessCertificateInput]
-    job_cards: List[JobCardInput]
+    job_cards: Optional[List[JobCardInput]] = Field(default_factory=list, description="Job cards are optional, defaults to empty list")
     component_health: List[ComponentHealthInput]
     
     # Optional metadata
@@ -125,7 +125,7 @@ class CompareMethodsRequest(BaseModel):
     """Request to compare multiple optimization methods"""
     trainset_status: List[TrainsetStatusInput]
     fitness_certificates: List[FitnessCertificateInput]
-    job_cards: List[JobCardInput]
+    job_cards: Optional[List[JobCardInput]] = Field(default_factory=list, description="Job cards are optional, defaults to empty list")
     component_health: List[ComponentHealthInput]
     
     metadata: Optional[Dict[str, Any]] = None
@@ -181,7 +181,7 @@ def convert_pydantic_to_dict(request: ScheduleOptimizationRequest) -> Dict[str, 
     data = {
         "trainset_status": [ts.dict() for ts in request.trainset_status],
         "fitness_certificates": [fc.dict() for fc in request.fitness_certificates],
-        "job_cards": [jc.dict() for jc in request.job_cards],
+        "job_cards": [jc.dict() for jc in request.job_cards] if request.job_cards else [],
         "component_health": [ch.dict() for ch in request.component_health],
         "metadata": request.metadata or {
             "generated_at": datetime.now().isoformat(),

@@ -29,7 +29,8 @@ class MetroScheduleOptimizer:
         num_trains: int,
         route: Route,
         train_health: List[TrainHealthStatus],
-        depot_name: str = "Muttom_Depot"
+        depot_name: str = "Muttom_Depot",
+        include_job_cards: bool = False
     ):
         self.date = date
         self.num_trains = num_trains
@@ -37,6 +38,7 @@ class MetroScheduleOptimizer:
         self.train_health = {t.trainset_id: t for t in train_health}
         self.depot_name = depot_name
         self.generator = MetroDataGenerator(num_trains)
+        self.include_job_cards = include_job_cards
         
         # Operating parameters
         self.op_hours = OperationalHours()
@@ -58,7 +60,7 @@ class MetroScheduleOptimizer:
         for i, train_id in enumerate(self.generator.trainset_ids):
             health = self.train_health[train_id]
             fitness_certs = self.generator.generate_fitness_certificates(train_id)
-            job_cards = self.generator.generate_job_cards(train_id)
+            job_cards = self.generator.generate_job_cards(train_id) if self.include_job_cards else JobCards(open=0, blocking=[])
             branding = self.generator.generate_branding()
             
             readiness = self.generator.calculate_readiness_score(

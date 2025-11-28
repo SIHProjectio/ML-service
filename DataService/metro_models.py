@@ -103,7 +103,7 @@ class Trainset(BaseModel):
     
     # Compliance and health
     fitness_certificates: FitnessCertificates
-    job_cards: JobCards
+    job_cards: Optional[JobCards] = Field(default_factory=lambda: JobCards(open=0, blocking=[]))
     
     # Branding
     branding: Optional[Branding] = None

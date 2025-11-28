@@ -33,9 +33,9 @@ class TrainsetSchedulingEvaluator:
                 self.fitness_map[ts_id] = {}
             self.fitness_map[ts_id][cert['department']] = cert
         
-        # Job cards by trainset
+        # Job cards by trainset (optional - may be empty)
         self.job_map = {}
-        for job in self.data['job_cards']:
+        for job in self.data.get('job_cards', []):
             ts_id = job['trainset_id']
             if ts_id not in self.job_map:
                 self.job_map[ts_id] = []

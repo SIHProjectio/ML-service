@@ -281,8 +281,12 @@ class MetroSyntheticDataGenerator:
             }
         }
     
-    def generate_complete_dataset(self) -> Dict:
-        """Generate complete synthetic dataset for metro scheduling"""
+    def generate_complete_dataset(self, include_job_cards: bool = False) -> Dict:
+        """Generate complete synthetic dataset for metro scheduling.
+        
+        Args:
+            include_job_cards: Whether to include job cards in the dataset. Default False.
+        """
         dataset = {
             "metadata": {
                 "generated_at": datetime.now().isoformat(),
@@ -292,7 +296,7 @@ class MetroSyntheticDataGenerator:
             },
             "trainset_status": self.generate_trainset_status(),
             "fitness_certificates": self.generate_fitness_certificates(),
-            "job_cards": self.generate_job_cards(),
+            "job_cards": self.generate_job_cards() if include_job_cards else [],
             "component_health": self.generate_component_health(),
             "iot_sensors": self.generate_iot_sensors(),
             "branding_contracts": self.generate_branding_contracts(),
@@ -304,9 +308,14 @@ class MetroSyntheticDataGenerator:
         }
         return dataset
     
-    def save_to_json(self, filename: str = "metro_synthetic_data.json"):
-        """Save generated data to JSON file"""
-        data = self.generate_complete_dataset()
+    def save_to_json(self, filename: str = "metro_synthetic_data.json", include_job_cards: bool = False):
+        """Save generated data to JSON file.
+        
+        Args:
+            filename: Output filename.
+            include_job_cards: Whether to include job cards in the dataset. Default False.
+        """
+        data = self.generate_complete_dataset(include_job_cards=include_job_cards)
         with open(filename, 'w') as f:
             json.dump(data, f, indent=2)
         print(f"Synthetic data generated and saved to {filename}")

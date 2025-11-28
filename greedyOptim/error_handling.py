@@ -54,8 +54,10 @@ class DataValidator:
         errors = []
         
         try:
-            # Check required top-level keys
-            required_keys = ['trainset_status', 'fitness_certificates', 'job_cards', 'component_health']
+            # Check required top-level keys (job_cards is now optional)
+            required_keys = ['trainset_status', 'fitness_certificates', 'component_health']
+            optional_keys = ['job_cards']
+            
             for key in required_keys:
                 if key not in data:
                     errors.append(f"Missing required data section: {key}")
@@ -68,6 +70,15 @@ class DataValidator:
                 # Validate individual records
                 section_errors = cls._validate_section(data[key], key)
                 errors.extend(section_errors)
+            
+            # Validate optional keys if present
+            for key in optional_keys:
+                if key in data and data[key]:
+                    if not isinstance(data[key], list):
+                        errors.append(f"Data section {key} must be a list")
+                        continue
+                    section_errors = cls._validate_section(data[key], key)
+                    errors.extend(section_errors)
             
             # Cross-validation
             if not errors:  # Only if basic structure is valid

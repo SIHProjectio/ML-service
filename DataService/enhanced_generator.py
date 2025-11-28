@@ -256,7 +256,7 @@ class EnhancedMetroDataGenerator:
                     estimated_hours = random.randint(2, 24)
                 
                 job = {
-                    "job_card_id": f"JC-{random.randint(10000, 99999)}",
+                    "job_id": f"JC-{random.randint(10000, 99999)}",
                     "trainset_id": ts_id,
                     "work_order_number": f"WO-{random.randint(100000, 999999)}",
                     "job_type": random.choice(job_types),
@@ -391,8 +391,12 @@ class EnhancedMetroDataGenerator:
         
         return contracts
     
-    def generate_complete_enhanced_dataset(self) -> Dict:
-        """Generate complete enhanced dataset with all improvements."""
+    def generate_complete_enhanced_dataset(self, include_job_cards: bool = False) -> Dict:
+        """Generate complete enhanced dataset with all improvements.
+        
+        Args:
+            include_job_cards: Whether to include job cards in the dataset. Default False.
+        """
         print("Generating enhanced synthetic data...")
         
         dataset = {
@@ -413,7 +417,7 @@ class EnhancedMetroDataGenerator:
             "trainset_profiles": self.trainset_profiles,
             "trainset_status": self.generate_enhanced_trainset_status(),
             "fitness_certificates": self.generate_realistic_fitness_certificates(),
-            "job_cards": self.generate_correlated_job_cards(),
+            "job_cards": self.generate_correlated_job_cards() if include_job_cards else [],
             "component_health": self.generate_realistic_component_health(),
             "branding_contracts": self.generate_optimized_branding_contracts(),
             # Keep the existing generators for other data
@@ -443,6 +447,11 @@ class EnhancedMetroDataGenerator:
                     "bogie_1": round(random.uniform(0.5, 3.5) / reliability_factor, 2),
                     "bogie_2": round(random.uniform(0.5, 3.5) / reliability_factor, 2),
                     "unit": "mm/s"
+                },
+                "temperature": {
+                    "motor_1": round(random.uniform(45, 85) + (1 - reliability_factor) * 10, 1),
+                    "motor_2": round(random.uniform(45, 85) + (1 - reliability_factor) * 10, 1),
+                    "unit": "°C"
                 },
                 "overall_condition": "Good" if reliability_factor > 0.85 else "Fair" if reliability_factor > 0.75 else "Poor"
             }
@@ -555,7 +564,8 @@ class EnhancedMetroDataGenerator:
         return {
             "date": datetime.now().date().isoformat(),
             "weather": {
-                "condition": random.choice(["Clear", "Cloudy", "Rainy"])
+                "condition": random.choice(["Clear", "Cloudy", "Rainy"]),
+                "temperature": round(random.uniform(20, 35), 1)
             },
             "ridership_forecast": {
                 "expected_passengers": random.randint(80000, 150000),
@@ -563,9 +573,14 @@ class EnhancedMetroDataGenerator:
             }
         }
     
-    def save_to_json(self, filename: str = "metro_enhanced_data.json") -> Dict:
-        """Save enhanced data to JSON file."""
-        data = self.generate_complete_enhanced_dataset()
+    def save_to_json(self, filename: str = "metro_enhanced_data.json", include_job_cards: bool = False) -> Dict:
+        """Save enhanced data to JSON file.
+        
+        Args:
+            filename: Output filename.
+            include_job_cards: Whether to include job cards in the dataset. Default False.
+        """
+        data = self.generate_complete_enhanced_dataset(include_job_cards=include_job_cards)
         
         with open(filename, 'w') as f:
             json.dump(data, f, indent=2)
