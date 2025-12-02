@@ -19,7 +19,8 @@ Usage:
 from .models import (
     OptimizationResult, OptimizationConfig, TrainsetConstraints,
     ScheduleResult, ScheduleTrainset, ServiceBlock, FleetSummary,
-    OptimizationMetrics, ScheduleAlert, TrainStatus, MaintenanceType, AlertSeverity
+    OptimizationMetrics, ScheduleAlert, TrainStatus, MaintenanceType, AlertSeverity,
+    StationStop, Trip
 )
 from .evaluator import TrainsetSchedulingEvaluator
 from .genetic_algorithm import GeneticAlgorithmOptimizer

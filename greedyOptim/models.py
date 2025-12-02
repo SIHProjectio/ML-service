@@ -30,6 +30,56 @@ class AlertSeverity(str, Enum):
 
 
 @dataclass
+class StationStop:
+    """A single station stop within a trip."""
+    station_code: str
+    station_name: str
+    arrival_time: Optional[str]  # HH:MM format, None for origin
+    departure_time: Optional[str]  # HH:MM format, None for destination
+    distance_from_origin_km: float
+    platform: Optional[int] = None
+    
+    def to_dict(self) -> Dict:
+        result = {
+            'station_code': self.station_code,
+            'station_name': self.station_name,
+            'distance_from_origin_km': self.distance_from_origin_km
+        }
+        if self.arrival_time:
+            result['arrival_time'] = self.arrival_time
+        if self.departure_time:
+            result['departure_time'] = self.departure_time
+        if self.platform:
+            result['platform'] = self.platform
+        return result
+
+
+@dataclass
+class Trip:
+    """A single trip from origin to destination with all stops."""
+    trip_id: str
+    trip_number: int  # 1, 2, 3... within the block
+    direction: str  # "UP" (towards Pettah) or "DOWN" (towards Aluva)
+    origin: str
+    destination: str
+    departure_time: str
+    arrival_time: str
+    stops: List[StationStop] = field(default_factory=list)
+    
+    def to_dict(self) -> Dict:
+        return {
+            'trip_id': self.trip_id,
+            'trip_number': self.trip_number,
+            'direction': self.direction,
+            'origin': self.origin,
+            'destination': self.destination,
+            'departure_time': self.departure_time,
+            'arrival_time': self.arrival_time,
+            'stops': [s.to_dict() for s in self.stops]
+        }
+
+
+@dataclass
 class ServiceBlock:
     """A service block represents a continuous operating period for a train."""
     block_id: str
@@ -38,9 +88,14 @@ class ServiceBlock:
     destination: str
     trip_count: int
     estimated_km: int
+    # Enhanced fields
+    journey_time_minutes: Optional[float] = None
+    trips: List[Trip] = field(default_factory=list)  # Detailed trip breakdown
+    period: Optional[str] = None  # morning_peak, midday, evening_peak, late_evening
+    is_peak: bool = False
     
     def to_dict(self) -> Dict:
-        return {
+        result = {
             'block_id': self.block_id,
             'departure_time': self.departure_time,
             'origin': self.origin,
@@ -48,6 +103,14 @@ class ServiceBlock:
             'trip_count': self.trip_count,
             'estimated_km': self.estimated_km
         }
+        if self.journey_time_minutes:
+            result['journey_time_minutes'] = self.journey_time_minutes
+        if self.period:
+            result['period'] = self.period
+        result['is_peak'] = self.is_peak
+        if self.trips:
+            result['trips'] = [t.to_dict() for t in self.trips]
+        return result
 
 
 @dataclass

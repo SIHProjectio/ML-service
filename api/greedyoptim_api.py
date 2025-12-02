@@ -174,14 +174,40 @@ class ScheduleOptimizationResponse(BaseModel):
 
 
 # New models for full schedule response
+class StationStopResponse(BaseModel):
+    """A single station stop within a trip"""
+    station_code: str
+    station_name: str
+    arrival_time: Optional[str] = None
+    departure_time: Optional[str] = None
+    distance_from_origin_km: float
+    platform: Optional[int] = None
+
+
+class TripResponse(BaseModel):
+    """A single trip from origin to destination with all stops"""
+    trip_id: str
+    trip_number: int
+    direction: str  # "UP" or "DOWN"
+    origin: str
+    destination: str
+    departure_time: str
+    arrival_time: str
+    stops: List[StationStopResponse] = []
+
+
 class ServiceBlockResponse(BaseModel):
-    """Service block with timing details"""
+    """Service block with timing details and trips"""
     block_id: str
     departure_time: str
     origin: str
     destination: str
     trip_count: int
     estimated_km: float
+    journey_time_minutes: Optional[float] = None
+    period: Optional[str] = None
+    is_peak: bool = False
+    trips: Optional[List[TripResponse]] = None
 
 
 class TrainsetScheduleResponse(BaseModel):
@@ -330,17 +356,47 @@ def convert_schedule_result_to_response(schedule_result) -> FullScheduleResponse
     for ts in schedule_result.trainsets:
         service_blocks_resp = None
         if ts.service_blocks:
-            service_blocks_resp = [
-                ServiceBlockResponse(
+            service_blocks_resp = []
+            for sb in ts.service_blocks:
+                # Convert trips with station stops
+                trips_resp = None
+                if sb.trips:
+                    trips_resp = []
+                    for trip in sb.trips:
+                        stops_resp = [
+                            StationStopResponse(
+                                station_code=stop.station_code,
+                                station_name=stop.station_name,
+                                arrival_time=stop.arrival_time,
+                                departure_time=stop.departure_time,
+                                distance_from_origin_km=stop.distance_from_origin_km,
+                                platform=stop.platform
+                            )
+                            for stop in trip.stops
+                        ]
+                        trips_resp.append(TripResponse(
+                            trip_id=trip.trip_id,
+                            trip_number=trip.trip_number,
+                            direction=trip.direction,
+                            origin=trip.origin,
+                            destination=trip.destination,
+                            departure_time=trip.departure_time,
+                            arrival_time=trip.arrival_time,
+                            stops=stops_resp
+                        ))
+                
+                service_blocks_resp.append(ServiceBlockResponse(
                     block_id=sb.block_id,
                     departure_time=sb.departure_time,
                     origin=sb.origin,
                     destination=sb.destination,
                     trip_count=sb.trip_count,
-                    estimated_km=sb.estimated_km
-                )
-                for sb in ts.service_blocks
-            ]
+                    estimated_km=sb.estimated_km,
+                    journey_time_minutes=sb.journey_time_minutes,
+                    period=sb.period,
+                    is_peak=sb.is_peak,
+                    trips=trips_resp
+                ))
         
         trainsets.append(TrainsetScheduleResponse(
             trainset_id=ts.trainset_id,

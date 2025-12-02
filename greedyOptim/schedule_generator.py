@@ -9,9 +9,11 @@ from typing import Dict, List, Optional
 from .models import (
     OptimizationResult, OptimizationConfig,
     ScheduleResult, ScheduleTrainset, ServiceBlock, FleetSummary,
-    OptimizationMetrics, ScheduleAlert, TrainStatus, MaintenanceType, AlertSeverity
+    OptimizationMetrics, ScheduleAlert, TrainStatus, MaintenanceType, AlertSeverity,
+    StationStop, Trip
 )
 from .service_blocks import ServiceBlockGenerator
+from .station_loader import get_station_loader, StationDataLoader
 from .evaluator import normalize_certificate_status, normalize_component_status
 
 
@@ -36,6 +38,12 @@ class ScheduleGenerator:
         self.data = data
         self.config = config or OptimizationConfig()
         self.service_block_generator = ServiceBlockGenerator()
+        
+        # Initialize station loader for detailed trip generation
+        try:
+            self.station_loader = get_station_loader()
+        except Exception:
+            self.station_loader = None
         
         # Build lookups
         self._build_lookups()
@@ -178,6 +186,97 @@ class ScheduleGenerator:
             alerts=alerts
         )
     
+    def _generate_trips_for_block(
+        self,
+        block_data: Dict,
+        block_id: str
+    ) -> List[Trip]:
+        """Generate detailed trips with station stops for a service block.
+        
+        Args:
+            block_data: Block data dictionary
+            block_id: Block ID
+            
+        Returns:
+            List of Trip objects with station stops
+        """
+        if not self.station_loader:
+            return []
+        
+        trips = []
+        origin = block_data['origin']
+        destination = block_data['destination']
+        trip_count = block_data.get('trip_count', 1)
+        
+        # Parse initial departure time
+        dep_time_str = block_data['departure_time']
+        current_time = datetime.strptime(dep_time_str, '%H:%M')
+        
+        # Get terminals for direction determination
+        terminals = self.station_loader.terminals
+        
+        for trip_num in range(1, trip_count + 1):
+            # Determine direction
+            if origin == terminals[0]:  # Aluva
+                direction = "DOWN"  # Towards Pettah
+            else:
+                direction = "UP"  # Towards Aluva
+            
+            # Get station sequence with times
+            try:
+                station_sequence = self.station_loader.get_station_sequence_for_trip(
+                    origin, destination,
+                    include_times=True,
+                    departure_time=current_time.strftime('%H:%M')
+                )
+            except Exception:
+                station_sequence = []
+            
+            # Convert to StationStop objects
+            stops = []
+            for station in station_sequence:
+                stop = StationStop(
+                    station_code=station.get('code', ''),
+                    station_name=station['name'],
+                    arrival_time=station.get('arrival_time'),
+                    departure_time=station.get('departure_time'),
+                    distance_from_origin_km=station.get('distance_from_origin_km', 0),
+                    platform=random.choice([1, 2])  # Random platform assignment
+                )
+                stops.append(stop)
+            
+            # Calculate arrival time at destination
+            if stops:
+                arrival_time = stops[-1].arrival_time or current_time.strftime('%H:%M')
+            else:
+                # Fallback calculation
+                journey_minutes = block_data.get('journey_time_minutes', 53)
+                arrival = current_time + timedelta(minutes=journey_minutes)
+                arrival_time = arrival.strftime('%H:%M')
+            
+            trip = Trip(
+                trip_id=f"{block_id}-T{trip_num:02d}",
+                trip_number=trip_num,
+                direction=direction,
+                origin=origin,
+                destination=destination,
+                departure_time=current_time.strftime('%H:%M'),
+                arrival_time=arrival_time,
+                stops=stops
+            )
+            trips.append(trip)
+            
+            # Calculate next trip start time (arrival + turnaround)
+            journey_minutes = block_data.get('journey_time_minutes', 53)
+            turnaround_minutes = 3  # Turnaround at terminal
+            total_minutes = journey_minutes + turnaround_minutes
+            current_time = current_time + timedelta(minutes=total_minutes)
+            
+            # Swap origin and destination for return trip
+            origin, destination = destination, origin
+        
+        return trips
+    
     def _generate_service_trainset(
         self,
         trainset_id: str,
@@ -214,17 +313,26 @@ class ScheduleGenerator:
             # Fall back to legacy index-based block generation
             blocks_data = self.service_block_generator.generate_service_blocks(index, num_service)
         
-        service_blocks = [
-            ServiceBlock(
-                block_id=b['block_id'],
+        service_blocks = []
+        for b in blocks_data:
+            block_id = b['block_id']
+            
+            # Generate detailed trips with station stops
+            trips = self._generate_trips_for_block(b, block_id)
+            
+            service_block = ServiceBlock(
+                block_id=block_id,
                 departure_time=b['departure_time'],
                 origin=b['origin'],
                 destination=b['destination'],
                 trip_count=b['trip_count'],
-                estimated_km=b['estimated_km']
+                estimated_km=b['estimated_km'],
+                journey_time_minutes=b.get('journey_time_minutes'),
+                period=b.get('period'),
+                is_peak=b.get('is_peak', False),
+                trips=trips
             )
-            for b in blocks_data
-        ]
+            service_blocks.append(service_block)
         
         daily_km = sum(b.estimated_km for b in service_blocks)
         
