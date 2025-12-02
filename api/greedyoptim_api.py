@@ -482,6 +482,203 @@ async def list_methods():
     }
 
 
+# ============================================================================
+# Station & Route Information Endpoints
+# ============================================================================
+
+@app.get("/stations")
+async def get_stations():
+    """Get all metro stations with their details.
+    
+    Returns the complete list of stations from the configured route,
+    including distance information, terminal status, and depot locations.
+    """
+    try:
+        from greedyOptim.station_loader import get_station_loader
+        
+        loader = get_station_loader()
+        return {
+            "success": True,
+            "route": loader.to_dict(),
+            "summary": {
+                "total_stations": loader.station_count,
+                "total_distance_km": loader.total_distance_km,
+                "terminals": loader.terminals
+            }
+        }
+    except Exception as e:
+        logger.error(f"Failed to get station data: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to load station data: {str(e)}")
+
+
+@app.get("/stations/{station_identifier}")
+async def get_station_details(station_identifier: str):
+    """Get details for a specific station by name or code.
+    
+    Args:
+        station_identifier: Station name (e.g., 'Aluva') or code (e.g., 'ALV')
+    """
+    try:
+        from greedyOptim.station_loader import get_station_loader
+        
+        loader = get_station_loader()
+        
+        # Try by name first, then by code
+        station = loader.get_station_by_name(station_identifier)
+        if not station:
+            station = loader.get_station_by_code(station_identifier)
+        
+        if not station:
+            raise HTTPException(
+                status_code=404, 
+                detail=f"Station not found: {station_identifier}"
+            )
+        
+        return {
+            "success": True,
+            "station": {
+                "sr_no": station.sr_no,
+                "code": station.code,
+                "name": station.name,
+                "distance_from_prev_km": station.distance_from_prev_km,
+                "cumulative_distance_km": station.cumulative_distance_km,
+                "is_terminal": station.is_terminal,
+                "has_depot": station.has_depot,
+                "platform_count": station.platform_count,
+                "depot_name": station.depot_name
+            }
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Failed to get station details: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/route/journey")
+async def calculate_journey(
+    origin: str, 
+    destination: str, 
+    departure_time: str = "07:00"
+):
+    """Calculate journey details between two stations.
+    
+    Args:
+        origin: Origin station name or code
+        destination: Destination station name or code  
+        departure_time: Departure time in HH:MM format (default: 07:00)
+    
+    Returns:
+        Journey details including intermediate stations with arrival times
+    """
+    try:
+        from greedyOptim.station_loader import get_station_loader
+        
+        loader = get_station_loader()
+        
+        # Validate stations exist
+        origin_station = loader.get_station_by_name(origin) or loader.get_station_by_code(origin)
+        dest_station = loader.get_station_by_name(destination) or loader.get_station_by_code(destination)
+        
+        if not origin_station:
+            raise HTTPException(status_code=404, detail=f"Origin station not found: {origin}")
+        if not dest_station:
+            raise HTTPException(status_code=404, detail=f"Destination station not found: {destination}")
+        
+        # Get journey details
+        station_sequence = loader.get_station_sequence_for_trip(
+            origin_station.name, 
+            dest_station.name,
+            include_times=True,
+            departure_time=departure_time
+        )
+        
+        distance = loader.get_distance_between(origin_station.name, dest_station.name)
+        journey_time = loader.calculate_journey_time(origin_station.name, dest_station.name)
+        
+        return {
+            "success": True,
+            "journey": {
+                "origin": origin_station.name,
+                "destination": dest_station.name,
+                "distance_km": round(distance, 3),
+                "journey_time_minutes": round(journey_time, 1),
+                "departure_time": departure_time,
+                "num_stops": len(station_sequence) - 1,
+                "stations": station_sequence
+            }
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Failed to calculate journey: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/route/round-trip")
+async def get_round_trip_info():
+    """Get round trip information for the full route.
+    
+    Returns round trip time and distance between terminals.
+    """
+    try:
+        from greedyOptim.station_loader import get_station_loader
+        
+        loader = get_station_loader()
+        
+        round_trip_time = loader.calculate_round_trip_time()
+        terminals = loader.terminals
+        one_way_distance = loader.total_distance_km
+        
+        return {
+            "success": True,
+            "round_trip": {
+                "terminals": terminals,
+                "one_way_distance_km": round(one_way_distance, 3),
+                "round_trip_distance_km": round(one_way_distance * 2, 3),
+                "round_trip_time_minutes": round(round_trip_time, 1),
+                "round_trip_time_hours": round(round_trip_time / 60, 2)
+            },
+            "operational_params": loader.route_info.operational_params
+        }
+    except Exception as e:
+        logger.error(f"Failed to get round trip info: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/service-blocks")
+async def get_service_blocks():
+    """Get all available service blocks for the day.
+    
+    Returns pre-defined service blocks that can be assigned to trainsets.
+    """
+    try:
+        from greedyOptim.service_blocks import ServiceBlockGenerator
+        
+        generator = ServiceBlockGenerator()
+        blocks = generator.get_all_service_blocks()
+        
+        # Group by period
+        by_period = {}
+        for block in blocks:
+            period = block['period']
+            if period not in by_period:
+                by_period[period] = []
+            by_period[period].append(block)
+        
+        return {
+            "success": True,
+            "total_blocks": len(blocks),
+            "route_length_km": generator.route_length_km,
+            "terminals": generator.terminals,
+            "blocks_by_period": by_period,
+            "all_blocks": blocks
+        }
+    except Exception as e:
+        logger.error(f"Failed to get service blocks: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.post("/optimize", response_model=ScheduleOptimizationResponse)
 async def optimize_schedule(request: ScheduleOptimizationRequest):
     """

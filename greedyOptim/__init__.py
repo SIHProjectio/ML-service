@@ -38,6 +38,11 @@ from .error_handling import (
     DataValidationError, ConstraintViolationError, ConfigurationError
 )
 from .schedule_generator import ScheduleGenerator, generate_schedule_from_result
+from .station_loader import (
+    StationDataLoader, get_station_loader, get_route_distance, get_terminals,
+    Station, RouteInfo
+)
+from .service_blocks import ServiceBlockGenerator
 
 # Optional OR-Tools integration
 try:
@@ -89,7 +94,14 @@ __all__ = [
     'ConstraintViolationError',
     'ConfigurationError',
     'ScheduleGenerator',
-    'generate_schedule_from_result'
+    'generate_schedule_from_result',
+    'StationDataLoader',
+    'get_station_loader',
+    'get_route_distance',
+    'get_terminals',
+    'Station',
+    'RouteInfo',
+    'ServiceBlockGenerator'
 ]
 
 # Add OR-Tools to exports if available
