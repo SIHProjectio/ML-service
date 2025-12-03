@@ -31,33 +31,6 @@ We benchmarked seven optimization strategies: Genetic Algorithm (GA), Particle S
 | 6 | **Genetic Algorithm (GA)** | 6.32s | 100% |
 | 7 | **NSGA-II** | 8.94s | 100% |
 
-### 2.1.1 **[NEW]** Extended Benchmark (Dec 2025) - Multi-Fleet Size Analysis
-
-**Configuration:** Fleet Sizes: 10, 20, 25, 30 trains | Runs: 3 per configuration
-
-| Rank | Optimizer | Average Execution Time (All Sizes) | Success Rate |
-| :--- | :--- | :--- | :--- |
-| 1 | **CMA-ES** | **1.94s** | 100% |
-| 2 | **Adaptive Algorithm** | 4.84s | 100% |
-| 3 | **Simulated Annealing** | 6.77s | 100% |
-| 4 | **Ensemble Method** | 10.41s | 100% |
-| 5 | **Genetic Algorithm (GA)** | 12.19s | 100% |
-| 6 | **Particle Swarm (PSO)** | 12.48s | 100% |
-| 7 | **NSGA-II** | 37.93s | 100% |
-
-**[NEW] Performance by Fleet Size:**
-
-| Fleet Size | Best Performer | Execution Time |
-| :--- | :--- | :--- |
-| 10 trains | CMA-ES | 1.83s |
-| 20 trains | CMA-ES | 2.53s |
-| 25 trains | CMA-ES | 1.44s |
-| 30 trains | CMA-ES | 1.97s |
-
-**Analysis:**
-*   **CMA-ES** demonstrates superior convergence speed, making it ideal for real-time rescheduling.
-*   **NSGA-II** is significantly slower due to the complexity of multi-objective Pareto front calculations but offers diverse solutions.
-*   **Ensemble Method** incurs a time penalty (running multiple optimizers in parallel) but ensures robustness by avoiding local optima.
 
 ### 2.2 Solution Quality (Fitness Scores)
 
