@@ -1,115 +1,99 @@
 """
-Trainset Scheduling Optimization Package
+greedyOptim - Train Scheduling Optimization Package
 
-This package provides multi-objective optimization algorithms for metro trainset scheduling.
-It includes various optimization methods like Genetic Algorithm, CMA-ES, PSO, and Simulated Annealing.
+This package provides optimization algorithms for trainset scheduling,
+with support for various metaheuristic and exact methods.
 
-Main classes:
-- TrainsetSchedulingOptimizer: Main interface for optimization
-- OptimizationConfig: Configuration parameters
-- OptimizationResult: Result container
-
-Usage:
-    from greedyOptim import optimize_trainset_schedule, OptimizationConfig
-    
-    config = OptimizationConfig(required_service_trains=20, min_standby=3)
-    result = optimize_trainset_schedule(data, method='ga', config=config)
+Submodules:
+    - core: Data models, utilities, error handling
+    - optimizers: Optimization algorithms (GA, CMA-ES, PSO, SA, hybrid, OR-Tools)
+    - scheduling: Scheduler, evaluator, schedule generation
+    - routing: Station data loading and route utilities
 """
 
-from .models import (
+# Re-export core components for backward compatibility
+from greedyOptim.core import (
+    # Models
     OptimizationResult, OptimizationConfig, TrainsetConstraints,
     ScheduleResult, ScheduleTrainset, ServiceBlock, FleetSummary,
     OptimizationMetrics, ScheduleAlert, TrainStatus, MaintenanceType, AlertSeverity,
-    StationStop, Trip
+    StationStop, Trip,
+    # Utils
+    normalize_certificate_status, normalize_component_status, normalize_operational_status,
+    decode_solution, create_block_assignment, extract_solution_groups,
+    build_block_assignments_dict, repair_block_assignment, mutate_block_assignment,
+    CERTIFICATE_STATUS_MAP, COMPONENT_STATUS_MAP, OPERATIONAL_STATUS_MAP,
+    # Error handling
+    OptimizationError, DataValidationError, ConstraintViolationError, ConfigurationError,
+    DataValidator, ErrorHandler
 )
-from .evaluator import TrainsetSchedulingEvaluator
-from .genetic_algorithm import GeneticAlgorithmOptimizer
-from .advanced_optimizers import CMAESOptimizer, ParticleSwarmOptimizer, SimulatedAnnealingOptimizer
-from .hybrid_optimizers import (
-    MultiObjectiveOptimizer, AdaptiveOptimizer, EnsembleOptimizer,
-    HyperParameterOptimizer, optimize_with_hybrid_methods
-)
-from .scheduler import (
+
+# Re-export scheduling components
+from greedyOptim.scheduling import (
+    TrainsetSchedulingEvaluator,
     TrainsetSchedulingOptimizer,
     optimize_trainset_schedule,
-    compare_optimization_methods
+    compare_optimization_methods,
+    ScheduleGenerator,
+    generate_schedule_from_result,
+    ServiceBlockGenerator,
+    create_service_blocks_for_schedule
 )
-from .error_handling import (
-    safe_optimize, DataValidator, OptimizationError,
-    DataValidationError, ConstraintViolationError, ConfigurationError
-)
-from .schedule_generator import ScheduleGenerator, generate_schedule_from_result
-from .station_loader import (
-    StationDataLoader, get_station_loader, get_route_distance, get_terminals,
-    Station, RouteInfo
-)
-from .service_blocks import ServiceBlockGenerator
 
-# Optional OR-Tools integration
-try:
-    from .ortools_optimizers import (
-        optimize_with_ortools, check_ortools_availability,
-        CPSATOptimizer, MIPOptimizer
+# Re-export optimizers
+from greedyOptim.optimizers import (
+    BaseOptimizer,
+    GeneticAlgorithmOptimizer,
+    CMAESOptimizer, ParticleSwarmOptimizer, SimulatedAnnealingOptimizer,
+    MultiObjectiveOptimizer, AdaptiveOptimizer, EnsembleOptimizer,
+    HyperParameterOptimizer, optimize_with_hybrid_methods,
+    ORTOOLS_AVAILABLE
+)
+
+# Re-export routing
+from greedyOptim.routing import (
+    StationDataLoader,
+    get_station_loader,
+    get_route_distance,
+    get_terminals,
+    Station,
+    RouteInfo
+)
+
+# Conditional OR-Tools exports
+if ORTOOLS_AVAILABLE:
+    from greedyOptim.optimizers import (
+        optimize_with_ortools,
+        check_ortools_availability,
+        CPSATOptimizer,
+        MIPOptimizer
     )
-    ORTOOLS_AVAILABLE = True
-except ImportError:
-    ORTOOLS_AVAILABLE = False
-    optimize_with_ortools = None
-    check_ortools_availability = None
-    CPSATOptimizer = None
-    MIPOptimizer = None
-
-__version__ = "1.0.0"
-__author__ = "Metro Optimization Team"
 
 __all__ = [
-    'OptimizationResult',
-    'OptimizationConfig', 
-    'TrainsetConstraints',
-    'ScheduleResult',
-    'ScheduleTrainset',
-    'ServiceBlock',
-    'FleetSummary',
-    'OptimizationMetrics',
-    'ScheduleAlert',
-    'TrainStatus',
-    'MaintenanceType',
-    'AlertSeverity',
-    'TrainsetSchedulingEvaluator',
-    'GeneticAlgorithmOptimizer',
-    'CMAESOptimizer',
-    'ParticleSwarmOptimizer',
-    'SimulatedAnnealingOptimizer',
-    'MultiObjectiveOptimizer',
-    'AdaptiveOptimizer', 
-    'EnsembleOptimizer',
-    'HyperParameterOptimizer',
-    'TrainsetSchedulingOptimizer',
-    'optimize_trainset_schedule',
-    'compare_optimization_methods',
-    'optimize_with_hybrid_methods',
-    'safe_optimize',
-    'DataValidator',
-    'OptimizationError',
-    'DataValidationError',
-    'ConstraintViolationError',
-    'ConfigurationError',
-    'ScheduleGenerator',
-    'generate_schedule_from_result',
-    'StationDataLoader',
-    'get_station_loader',
-    'get_route_distance',
-    'get_terminals',
-    'Station',
-    'RouteInfo',
-    'ServiceBlockGenerator'
+    # Core models
+    'OptimizationResult', 'OptimizationConfig', 'TrainsetConstraints',
+    'ScheduleResult', 'ScheduleTrainset', 'ServiceBlock', 'FleetSummary',
+    'OptimizationMetrics', 'ScheduleAlert', 'TrainStatus', 'MaintenanceType', 'AlertSeverity',
+    'StationStop', 'Trip',
+    # Core utils
+    'normalize_certificate_status', 'normalize_component_status', 'normalize_operational_status',
+    'decode_solution', 'create_block_assignment', 'extract_solution_groups',
+    'build_block_assignments_dict', 'repair_block_assignment', 'mutate_block_assignment',
+    # Error handling
+    'OptimizationError', 'DataValidationError', 'ConstraintViolationError', 'ConfigurationError',
+    'DataValidator', 'ErrorHandler',
+    # Scheduling
+    'TrainsetSchedulingEvaluator', 'TrainsetSchedulingOptimizer',
+    'optimize_trainset_schedule', 'compare_optimization_methods',
+    'ScheduleGenerator', 'generate_schedule_from_result',
+    'ServiceBlockGenerator', 'create_service_blocks_for_schedule',
+    # Optimizers
+    'BaseOptimizer', 'GeneticAlgorithmOptimizer',
+    'CMAESOptimizer', 'ParticleSwarmOptimizer', 'SimulatedAnnealingOptimizer',
+    'MultiObjectiveOptimizer', 'AdaptiveOptimizer', 'EnsembleOptimizer',
+    'HyperParameterOptimizer', 'optimize_with_hybrid_methods',
+    'ORTOOLS_AVAILABLE',
+    # Routing
+    'StationDataLoader', 'get_station_loader', 'get_route_distance', 'get_terminals',
+    'Station', 'RouteInfo'
 ]
-
-# Add OR-Tools to exports if available
-if ORTOOLS_AVAILABLE:
-    __all__.extend([
-        'optimize_with_ortools',
-        'check_ortools_availability', 
-        'CPSATOptimizer',
-        'MIPOptimizer'
-    ])

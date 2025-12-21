@@ -8,21 +8,19 @@ import random
 from concurrent.futures import ThreadPoolExecutor
 import time
 
-from .models import OptimizationResult, OptimizationConfig
-from .evaluator import TrainsetSchedulingEvaluator
+from greedyOptim.core.models import OptimizationResult, OptimizationConfig
+from greedyOptim.scheduling.evaluator import TrainsetSchedulingEvaluator
+from .base_optimizer import BaseOptimizer
 from .genetic_algorithm import GeneticAlgorithmOptimizer
 from .advanced_optimizers import CMAESOptimizer, ParticleSwarmOptimizer, SimulatedAnnealingOptimizer
 
 
-class MultiObjectiveOptimizer:
+class MultiObjectiveOptimizer(BaseOptimizer):
     """Multi-objective optimization using NSGA-II approach."""
     
     def __init__(self, evaluator: TrainsetSchedulingEvaluator, config: Optional[OptimizationConfig] = None):
-        self.evaluator = evaluator
-        self.config = config or OptimizationConfig()
+        super().__init__(evaluator, config)
         self.n_genes = evaluator.num_trainsets
-        self.n_blocks = evaluator.num_blocks
-        self.optimize_blocks = self.config.optimize_block_assignment
         
         # Objective weights for dominance comparison
         # Higher weight = more important in determining dominance
@@ -39,8 +37,6 @@ class MultiObjectiveOptimizer:
         
         Uses weighted objectives to prioritize service availability over branding.
         """
-        # Convert maximization objectives to minimization (lower is better)
-        # Apply weights to emphasize important objectives
         w = self.objective_weights
         obj1 = [
             -solution1['service_availability'] * w['service_availability'],
@@ -129,32 +125,11 @@ class MultiObjectiveOptimizer:
     
     def _create_block_assignment(self, trainset_sol: np.ndarray) -> np.ndarray:
         """Create block assignments for a trainset solution."""
-        service_indices = np.where(trainset_sol == 0)[0]
-        
-        if len(service_indices) == 0:
-            return np.full(self.n_blocks, -1, dtype=int)
-        
-        # Distribute blocks evenly across service trains
-        block_sol = np.zeros(self.n_blocks, dtype=int)
-        for i in range(self.n_blocks):
-            block_sol[i] = service_indices[i % len(service_indices)]
-        
-        return block_sol
+        return self.create_block_assignment(trainset_sol)
     
     def _mutate_block_assignment(self, block_sol: np.ndarray, service_indices: np.ndarray) -> np.ndarray:
         """Mutate block assignment."""
-        mutated = block_sol.copy()
-        
-        if len(service_indices) == 0:
-            return mutated
-        
-        # Randomly reassign some blocks
-        num_mutations = max(1, self.n_blocks // 10)
-        for _ in range(num_mutations):
-            idx = np.random.randint(0, len(mutated))
-            mutated[idx] = np.random.choice(service_indices)
-        
-        return mutated
+        return self.mutate_block_assignment(block_sol, service_indices)
     
     def _create_smart_initial_solution(self) -> np.ndarray:
         """Create a smart initial solution that respects constraints."""
@@ -173,18 +148,14 @@ class MultiObjectiveOptimizer:
     
     def optimize(self) -> OptimizationResult:
         """Run NSGA-II multi-objective optimization."""
-        # Initialize population with trainset solutions and block assignments
-        # Mix of smart and random solutions for diversity
         population = []
         block_population = []
         
-        # First, add some smart solutions (constraint-aware)
         num_smart = min(10, self.config.population_size // 5)
         for _ in range(num_smart):
             solution = self._create_smart_initial_solution()
-            # Add some random mutation to create diversity
             for i in range(self.n_genes):
-                if np.random.random() < 0.1:  # 10% mutation
+                if np.random.random() < 0.1:
                     solution[i] = np.random.choice([0, 1, 2], p=[0.70, 0.20, 0.10])
             population.append(solution)
             if self.optimize_blocks:
@@ -208,16 +179,13 @@ class MultiObjectiveOptimizer:
         
         for gen in range(self.config.generations):
             try:
-                # Evaluate objectives for all solutions
                 objectives = []
                 for idx, solution in enumerate(population):
                     obj = self.evaluator.calculate_objectives(solution)
                     objectives.append(obj)
                 
-                # Non-dominated sorting
                 fronts = self.fast_non_dominated_sort(objectives)
                 
-                # Selection for next generation
                 new_population = []
                 new_block_population = [] if self.optimize_blocks else None
                 for front in fronts:
@@ -226,7 +194,6 @@ class MultiObjectiveOptimizer:
                         if self.optimize_blocks:
                             new_block_population.extend([block_population[i] for i in front])
                     else:
-                        # Use crowding distance to select from this front
                         distances = self.crowding_distance(front, objectives)
                         sorted_front = sorted(zip(front, distances), 
                                             key=lambda x: x[1], reverse=True)
@@ -248,7 +215,6 @@ class MultiObjectiveOptimizer:
                 
                 # Ensure block population is synchronized
                 if self.optimize_blocks and len(new_block_population) != len(new_population):
-                    # Rebuild block population if out of sync
                     new_block_population = [self._create_block_assignment(sol) for sol in new_population]
                 
                 while len(offspring) < self.config.population_size:
@@ -293,19 +259,15 @@ class MultiObjectiveOptimizer:
                         
                         offspring_blocks.append(block_child)
                 
-                # ELITISM: Combine parents and offspring, then select best
                 combined_population = new_population + offspring
                 combined_blocks = (new_block_population + offspring_blocks) if self.optimize_blocks else None
                 
-                # Evaluate combined population
                 combined_objectives = []
                 for sol in combined_population:
                     combined_objectives.append(self.evaluator.calculate_objectives(sol))
                 
-                # Non-dominated sorting on combined population
                 combined_fronts = self.fast_non_dominated_sort(combined_objectives)
                 
-                # Select best individuals for next generation
                 population = []
                 block_population = [] if self.optimize_blocks else None
                 
@@ -315,7 +277,6 @@ class MultiObjectiveOptimizer:
                         if self.optimize_blocks:
                             block_population.extend([combined_blocks[i].copy() for i in front])
                     else:
-                        # Use crowding distance for this front
                         distances = self.crowding_distance(front, combined_objectives)
                         sorted_front = sorted(zip(front, distances), key=lambda x: x[1], reverse=True)
                         remaining = self.config.population_size - len(population)
@@ -341,12 +302,9 @@ class MultiObjectiveOptimizer:
                               if obj.get('constraint_penalty', 0) == 0]
             
             if valid_solutions:
-                # Among valid solutions, choose the one with highest service_availability
-                # (which means more trains in service)
                 best_idx = max(valid_solutions, 
                               key=lambda x: x[2].get('service_availability', 0))[0]
             else:
-                # Fall back to lowest constraint penalty + highest service
                 best_idx = max(range(len(best_solutions)),
                               key=lambda i: (
                                   -best_solutions[i][1].get('constraint_penalty', float('inf')),
@@ -355,54 +313,24 @@ class MultiObjectiveOptimizer:
             
             best_solution, best_objectives = best_solutions[best_idx]
             if self.optimize_blocks:
-                # Always create fresh block assignment for the best solution
-                # to ensure all 106 blocks are properly assigned
                 best_block_sol = self._create_block_assignment(best_solution)
         else:
-            # Fallback to first solution
             best_solution = population[0]
             best_objectives = self.evaluator.calculate_objectives(best_solution)
             if self.optimize_blocks:
                 best_block_sol = self._create_block_assignment(best_solution)
         
-        return self._build_result(best_solution, best_objectives, best_block_sol)
+        return self.build_result(best_solution, objectives=best_objectives, block_solution=best_block_sol)
     
-    def _build_result(self, solution: np.ndarray, objectives: Dict[str, float],
-                      block_solution: Optional[np.ndarray] = None) -> OptimizationResult:
-        """Build optimization result."""
-        fitness = self.evaluator.fitness_function(solution)
+    def build_result(self, solution: np.ndarray, fitness: float = 0.0, 
+                     block_solution: Optional[np.ndarray] = None,
+                     objectives: Optional[Dict[str, float]] = None) -> OptimizationResult:
+        """Build optimization result - overrides base to accept objectives directly."""
+        if objectives is None:
+            objectives = self.evaluator.calculate_objectives(solution)
         
-        service = [self.evaluator.trainsets[i] for i, v in enumerate(solution) if v == 0]
-        standby = [self.evaluator.trainsets[i] for i, v in enumerate(solution) if v == 1]
-        maintenance = [self.evaluator.trainsets[i] for i, v in enumerate(solution) if v == 2]
-        
-        explanations = {}
-        for ts_id in service:
-            valid, reason = self.evaluator.check_hard_constraints(ts_id)
-            explanations[ts_id] = "✓ Fit for service" if valid else f"⚠ {reason}"
-        
-        # Build block assignments
-        block_assignments = {}
-        if block_solution is not None and self.optimize_blocks:
-            for ts_id in service:
-                block_assignments[ts_id] = []
-            
-            for block_idx, train_idx in enumerate(block_solution):
-                if 0 <= train_idx < len(self.evaluator.trainsets):
-                    ts_id = self.evaluator.trainsets[int(train_idx)]
-                    if ts_id in block_assignments:
-                        block_id = self.evaluator.all_blocks[block_idx]['block_id']
-                        block_assignments[ts_id].append(block_id)
-        
-        return OptimizationResult(
-            selected_trainsets=service,
-            standby_trainsets=standby,
-            maintenance_trainsets=maintenance,
-            objectives=objectives,
-            fitness_score=fitness,
-            explanation=explanations,
-            service_block_assignments=block_assignments
-        )
+        fitness = self.evaluator.fitness_function(solution) if fitness == 0.0 else fitness
+        return super().build_result(solution, fitness, block_solution)
 
 class AdaptiveOptimizer:
     """Adaptive optimizer that switches between algorithms based on performance."""
@@ -411,7 +339,6 @@ class AdaptiveOptimizer:
         self.evaluator = evaluator
         self.config = config or OptimizationConfig()
         
-        # Initialize different optimizers
         self.optimizers = {
             'ga': GeneticAlgorithmOptimizer(evaluator, config),
             'cmaes': CMAESOptimizer(evaluator, config),
@@ -424,7 +351,6 @@ class AdaptiveOptimizer:
     
     def update_probabilities(self):
         """Update selection probabilities based on recent performance."""
-        # Calculate average improvement for each optimizer
         improvements = {}
         for name, history in self.performance_history.items():
             if len(history) >= 2:
@@ -459,12 +385,10 @@ class AdaptiveOptimizer:
         print(f"Starting Adaptive Optimization with {max_iterations} iterations")
         
         for iteration in range(max_iterations):
-            # Select optimizer
             selected = self.select_optimizer()
             print(f"Iteration {iteration + 1}: Using {selected.upper()}")
             
             try:
-                # Run selected optimizer with reduced generations
                 reduced_config = OptimizationConfig(
                     required_service_trains=self.config.required_service_trains,
                     min_standby=self.config.min_standby,
@@ -501,7 +425,6 @@ class AdaptiveOptimizer:
                 print(f"  Error with {selected}: {e}")
                 self.performance_history[selected].append(float('inf'))
         
-        # Print final probabilities
         print(f"\nFinal algorithm probabilities:")
         for name, prob in self.selection_probabilities.items():
             print(f"  {name.upper()}: {prob:.3f}")
@@ -556,7 +479,6 @@ class EnsembleOptimizer:
         
         start_time = time.time()
         
-        # Run optimizers in parallel
         with ThreadPoolExecutor(max_workers=4) as executor:
             futures = {executor.submit(self.run_single_optimizer, opt): opt for opt in optimizers}
             
@@ -634,7 +556,7 @@ def optimize_with_hybrid_methods(data: Dict, method: str = 'adaptive') -> Optimi
         data: Metro synthetic data
         method: 'multi-objective', 'adaptive', 'ensemble', or 'auto-tune'
     """
-    from .evaluator import TrainsetSchedulingEvaluator
+    from greedyOptim.scheduling.evaluator import TrainsetSchedulingEvaluator
     
     evaluator = TrainsetSchedulingEvaluator(data)
     
@@ -659,7 +581,6 @@ def optimize_with_hybrid_methods(data: Dict, method: str = 'adaptive') -> Optimi
 if __name__ == "__main__":
     import json
     
-    # Load data
     try:
         with open('metro_enhanced_data.json', 'r') as f:
             data = json.load(f)
@@ -667,7 +588,6 @@ if __name__ == "__main__":
         print("Please generate enhanced data first: python DataService/enhanced_generator.py")
         exit(1)
     
-    # Test hybrid methods
     methods = ['adaptive', 'ensemble']
     
     for method in methods:
